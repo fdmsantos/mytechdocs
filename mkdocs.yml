@@ -1,0 +1,68 @@
+site_name: My Tech Docs Docs
+site_url: https://fdmsantos.github.io/mytechdocs/
+site_description: My Technical documentation
+site_author: Fábio Santos
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/book-open-page-variant
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - toc.follow
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+      linenums: false
+  - pymdownx.inlinehilite
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 5
+plugins:
+  - glightbox
+  - search
+
+nav:
+  - Data Engineering:
+      - Hadoop:
+          - Administration: dataengineering/hadoop/administration.md
+          - Setup Cluster: dataengineering/hadoop/setup.md
+      - Kafka:
+          - Administration: dataengineering/kafka/administration.md
+          - Schema Registry: dataengineering/kafka/schema.md
+      - Spark:
+          Spark: dataengineering/spark/spark.md
+          Databricks: dataengineering/spark/databricks.md
+      - Hive: dataengineering/hive.md
+      - Databases: dataengineering/databases.md
+  - Unix OS:
+      - Certbot: unix/certbot.md
+      - Networking: unix/networking.md
