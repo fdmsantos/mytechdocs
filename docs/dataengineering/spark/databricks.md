@@ -1,5 +1,13 @@
 # Databricks
 
+## Assets
+
+[Practice Exam](files/PracticeExam_DatabricksDataEngineerAssociate.pdf)
+
+[Exam Link](https://www.webassessor.com/databricks)
+
+Udemy Course
+
 ## Delta Lake
 
 * Brings ACID transactions to object storage

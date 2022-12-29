@@ -58,11 +58,15 @@ nav:
       - Kafka:
           - Administration: dataengineering/kafka/administration.md
           - Schema Registry: dataengineering/kafka/schema.md
+          - Connectors: dataengineering/kafka/connectors.md
       - Spark:
-          Spark: dataengineering/spark/spark.md
-          Databricks: dataengineering/spark/databricks.md
+          - Spark: dataengineering/spark/spark.md
+          - Databricks: dataengineering/spark/databricks.md
+      - Storage Layers:
+          - Iceberg: dataengineering/storagelayers/iceberg.md
       - Hive: dataengineering/hive.md
       - Databases: dataengineering/databases.md
+      - Airflow: dataengineering/airflow.md
   - Unix OS:
-      - Certbot: unix/certbot.md
+      - Apps: unix/apps.md
       - Networking: unix/networking.md

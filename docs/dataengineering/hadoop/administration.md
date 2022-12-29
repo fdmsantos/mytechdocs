@@ -76,23 +76,31 @@ hadoop fs -rm hadoop-test2/test_with_rep5.csv
 
 ### core-site.xml
 
-| Properties                     | Value                                                                                                                                                                 | Description          |
-|:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------|
-| fs.defaultFS                   | hdfs://ip:port                                                                                                                                                        | Location of NameNode |
-| io.compression.codecs          | org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec,org.apache.hadoop.io.compress.SnappyCodec |                      |
-| hadoop.proxyuser.mapred.groups | *                                                                                                                                                                     |                      |
-| hadoop.proxyuser.mapred.hosts  | *                                                                                                                                                                     |                      |
+[Core Site](https://github.com/hanborq/hadoop/blob/master/example-confs/conf.secure/core-site.xml)
 
+| Properties                     | Value                                                                                                                                                                 | Description                                                                   |
+|:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------|
+| fs.defaultFS                   | hdfs://ip:port                                                                                                                                                        | Location of NameNode                                                          |
+| io.compression.codecs          | org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec,org.apache.hadoop.io.compress.SnappyCodec |                                                                               |
+| hadoop.proxyuser.mapred.groups | *                                                                                                                                                                     |                                                                               |
+| hadoop.proxyuser.mapred.hosts  | *                                                                                                                                                                     |                                                                               |
+| hadoop.security.authentication | simple                                                                                                                                                                | Set the authentication for the cluster. Valid values are: simple orkerberos.  |
+| hadoop.security.authorization  | true                                                                                                                                                                  |                                                                               |
 
 ### hdfs-site.xml
 
-| Properties                       | Value                 | Description                                                                |
-|:---------------------------------|:----------------------|:---------------------------------------------------------------------------|
-| dfs.namenode.name.dir            | file:///data/1/dfs/nn | Location in the file system where namenode can store the files and blocks  |
-| dfs.datanode.name.dir            | file:///data/1/dfs/nn | Location in the file system where data node can store the files and blocks |
-| dfs.datanode.http-address        | ip:port               | HTTP Address of namenode. Give Access to UI                                |
-| dfs.permissions.superusergroup   | hadoop                |                                                                            |
-| dfs.webhdfs.enabled              | true                  |                                                                            |
+[HDFS Site](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml)
+
+| Properties                                            | Value                 | Description                                                                               |
+|:------------------------------------------------------|:----------------------|:------------------------------------------------------------------------------------------|
+| dfs.namenode.name.dir                                 | file:///data/1/dfs/nn | Location in the file system where namenode can store the files and blocks                 |
+| dfs.datanode.name.dir                                 | file:///data/1/dfs/nn | Location in the file system where data node can store the files and blocks                |
+| dfs.datanode.http-address                             | ip:port               | HTTP Address of datenode. Give Access to UI                                               |
+| dfs.permissions.superusergroup                        | hadoop                |                                                                                           |
+| dfs.webhdfs.enabled                                   | true                  |                                                                                           |
+| dfs.namenode.rpc-bind-host                            | 127.0.0.1             | IP to bind HDFS Cluster. Only connections from this ip are allowed                        |
+| dfs.namenode.rpc-address                              | 54.76.210.83:9000     | Where run HDFS Cluster                                                                    |
+| dfs.namenode.datanode.registration.ip-hostname-check  | true                  | IF dfs.namenode.rpc-address is IP (note domain), this needs to be false to datanode work. |
 
 
 ### mapred-site. xml
@@ -159,3 +167,5 @@ Supports Log Aggregation
 - Min and Max Allowed
     -  yarn.schedular.capacity.minimum-allocation-mb
     - yarn.scheduler.capacity.maximum-allocation-mb
+
+
