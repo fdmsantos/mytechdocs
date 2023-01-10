@@ -93,11 +93,11 @@ export JAVA_HOME=/usr/lib/jvm/jdk8u352-b08
     </property>
     <property>
         <name>dfs.namenode.name.dir</name>
-        <value>file:///usr/local/hadoop/hdfs/data</value>
+        <value>file:///usr/local/hadoop/hdfs/data/namenode</value>
     </property>
     <property>
         <name>dfs.datanode.data.dir</name>
-        <value>file:///usr/local/hadoop/hdfs/data</value>
+        <value>file:///usr/local/hadoop/hdfs/data/datanode</value>
     </property>
 </configuration>
 ```

@@ -167,5 +167,10 @@ Supports Log Aggregation
 - Min and Max Allowed
     -  yarn.schedular.capacity.minimum-allocation-mb
     - yarn.scheduler.capacity.maximum-allocation-mb
+  
+## Create HDFS User
 
-
+```bash
+/usr/local/hadoop/bin/hdfs dfs -mkdir /user/nobody
+/usr/local/hadoop/bin/hdfs dfs -chown nobody /user/nobody
+```

@@ -65,7 +65,9 @@ nav:
       - Storage Layers:
           - Iceberg: dataengineering/storagelayers/iceberg.md
       - Hive: dataengineering/hive.md
-      - Databases: dataengineering/databases.md
+      - Datawarehouse:
+          - DBT: dataengineering/datawarehouse/dbt.md
+          - Databases: dataengineering/datawarehouse/databases.md
       - Airflow: dataengineering/airflow.md
   - Unix OS:
       - Apps: unix/apps.md
