@@ -67,8 +67,13 @@ nav:
       - Hive: dataengineering/hive.md
       - Datawarehouse:
           - DBT: dataengineering/datawarehouse/dbt.md
-          - Databases: dataengineering/datawarehouse/databases.md
+          - Azure Synapse: dataengineering/datawarehouse/synapse.md
       - Airflow: dataengineering/airflow.md
+  - Programming:
+      Big O: programming/bigo.md
   - Unix OS:
       - Apps: unix/apps.md
       - Networking: unix/networking.md
+  - Certifications:
+      - Azure:
+        - Data Engineer Associate:  certifications/azure/azure-data-engineer-associate.md
