@@ -134,6 +134,10 @@ FROM
     ) AS [result]'
 ```
 
+### PDW_SHOWSPACEUSED(‘table‘)
+
+To Get Space by Distribution
+
 ## Statistics
 
 [Link](https://learn.microsoft.com/en-us/azure/synapse-analytics/sql/develop-tables-statistics#examples-create-statistics)
@@ -157,6 +161,16 @@ SET AUTO_CREATE_STATISTICS ON
 ### dm_pdw_nodes_tran_database_transactions
 
 If your queries are failing or taking a long time to proceed, you can check and monitor if you have any transactions rolling back.
+
+[Reference](https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-manage-monitor#monitor-transaction-log-rollback)
+
+```sql
+SELECT *
+SUM(CASE WHEN t.database_transaction_next_undo_lsn IS NOT NULL THEN 1 ELSE 0 END), t.pdw_node_id, nod.[type]
+FROM sys.dm_pdw_nodes_tran_database_transactions t
+JOIN sys.dm_pdw_nodes nod ON t.pdw_node_id = nod.pdw_node_id
+GROUP BY t.pdw_node_id, nod.[type]
+```
 
 ### dm_pdw_nodes_db_partition_stats
 

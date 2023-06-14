@@ -567,7 +567,7 @@ SET QUERY_STORE = on;
 
 * Data Engineers 
     * High Concurrency cluster as it provides for sharing . Also caters for SQL, Python and R.
-    * High-concurrency clusters do not support Scala. So the answer is still ‘No
+    * High-concurrency clusters do not support Scala.
 * Data Scientist 
     * Standard Clusters which automatically terminates after 120 minutes and caters for Scala, SQL, Python and R.
 * JOBS 
@@ -643,6 +643,10 @@ SET QUERY_STORE = on;
         * 1.1 Previous behaviour
         * 1.0 First Generation
 
+* Supports Reference Data
+  * Azure Blob Storage
+  * Azure SQL Database
+
 ### Processing Time Series
 
 * Event Time
@@ -706,7 +710,6 @@ SET QUERY_STORE = on;
 * Backlogged Events
     * If the backlog event metric keeps increasing, it‘s an indicator that the system resource is constrained (either because of output sink throttling, or high CPU).
     * Note: Backlogged Input Events: Number of input events that are backlogged. A non-zero value for this metric implies that your job isn‘t able to keep up with the number of incoming events. If this value is slowly increasing or consistently non-zero, you should scale out your job: adjust Streaming Units.
-
 
 ### Partitioning
 
