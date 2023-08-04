@@ -71,9 +71,12 @@ nav:
       - Airflow: dataengineering/airflow.md
   - Programming:
       Big O: programming/bigo.md
+      Bot Framework: programming/bot-framework.md
   - Unix OS:
       - Apps: unix/apps.md
       - Networking: unix/networking.md
   - Certifications:
       - Azure:
         - Data Engineer Associate:  certifications/azure/azure-data-engineer-associate.md
+      - Palo Alto:
+          - PCCSE: certifications/palo-alto/prisma-certified-cloud-security-engineer.md
