@@ -51,6 +51,9 @@ plugins:
   - search
 
 nav:
+  - Cloud:
+      - Azure:
+          - Azure Virtual Desktop: cloud/azure/azd.md
   - Data Engineering:
       - Hadoop:
           - Administration: dataengineering/hadoop/administration.md
@@ -80,3 +83,5 @@ nav:
         - Data Engineer Associate:  certifications/azure/azure-data-engineer-associate.md
       - Palo Alto:
           - PCCSE: certifications/palo-alto/prisma-certified-cloud-security-engineer.md
+      - Kubernetes:
+          - CKA: certifications/kubernetes/cka.md
