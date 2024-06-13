@@ -51,6 +51,13 @@ plugins:
   - search
 
 nav:
+  - Kubernetes:
+      - Resources: kubernetes/resources.md
+      - Scheduling: kubernetes/scheduling.md
+      - Application Configuration: kubernetes/appConfiguration.md
+      - Security: kubernetes/security.md
+      - Core Components: kubernetes/coreComponents.md
+      - Cluster Maintenance: kubernetes/clusterMaintenance.md
   - Cloud:
       - Azure:
           - Azure Virtual Desktop: cloud/azure/azd.md
@@ -83,5 +90,3 @@ nav:
         - Data Engineer Associate:  certifications/azure/azure-data-engineer-associate.md
       - Palo Alto:
           - PCCSE: certifications/palo-alto/prisma-certified-cloud-security-engineer.md
-      - Kubernetes:
-          - CKA: certifications/kubernetes/cka.md
