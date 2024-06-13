@@ -1,7 +1,5 @@
 # Kubernetes Resources
 
-![Architecture](images/cluster-architecture.png){ loading=lazy }
-
 ## Pods
 
 ```yaml
@@ -14,6 +12,8 @@ metadata:
     type: front-end
 spec:
   schedulerName: my-scheduler # To Use Custom Scheduler
+  securityContext:
+    runAsUser: 1000
   containers:
     - name: nginx-container
       image: nginx
@@ -46,12 +46,18 @@ spec:
         limits:
           memory: "2Gi"
           cpu: "2"
+      securityContext:
+          runAsUser: 1000
+          capabilities:
+            add: ["MAC_ADMIN", "SYS_TIME"]
     - name: log-agent
       image: log-agent
   initContainers:
     - name: init-myservice
       image: busybox
       command: ['sh', '-c', 'git clone <some-repository-that-will-be-used-by-application> ; done;']
+  imagePullSecrets: # To Configure Private Registry
+    - name: regcred
   serviceAccountName: dashboard-sa
   automountServiceAccountToken: false # Deprecated. Not Necessary in latest versions
   volumes:
@@ -168,6 +174,42 @@ spec:
     <POD YAML Template>
 ```
 
+## Network Policy
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+ name: db-policy
+spec:
+  podSelector:
+    matchLabels:
+      role: db
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          name: api-pod
+      namespaceSelector: # Its necessary label namespace
+        matchLabels:
+          name: prod
+    - ipBlock: # To External access
+        cidr: 192.168.5.10/32 
+    ports:
+    - protocol: TCP
+      port: 3306
+  egress:
+    - to:
+        - ipBlock:
+            cidr: 192.168.5.10/32
+      ports:
+        - protocol: TCP
+          port: 80
+```
+
 ## RBAC
 
 ### Role
@@ -195,7 +237,7 @@ kind: RoleBinding
 metadata:
   name: devuser-developer-binding
 subjects:
-- kind: User
+- kind: User # Or ServiceAccount
   name: dev-user # "name" is case sensitive
   apiGroup: rbac.authorization.k8s.io
 roleRef:
@@ -285,4 +327,5 @@ spec:
 
 ```shell
 kubectl create token <sa-account-name>
+kubectl create token <sa-account-name> # To create token
 ```

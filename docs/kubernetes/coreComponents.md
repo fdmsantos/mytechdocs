@@ -1,5 +1,7 @@
 # Kubernetes Core Components
 
+![Architecture](images/cluster-architecture.png){ loading=lazy }
+
 ## ETCD
 
 ```shell

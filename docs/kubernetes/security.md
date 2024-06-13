@@ -107,3 +107,8 @@ kubectl get csr jane -o yaml
 echo "<certificate>" | base64 --decode # To Decode it
 ```
 
+
+
+### Network Policies
+
+![CNI Network Policies Supported](images/cni-network-policies-supported.png){ loading=lazy }

@@ -1,4 +1,4 @@
-## Cluster Maintenance
+# Cluster Maintenance
 
 ## Monitor: Metrics Server
 
@@ -104,4 +104,14 @@ service kube-apiserver start
 
 # Delete etcd pod if not goes to ready state
 kubectl delete pod etcd-controlplane -n kube-system
+```
+
+## Private Registry
+
+```shell
+$ kubectl create secret docker-registry regcred \
+  --docker-server=private-registry.io \ 
+  --docker-username=registry-user \
+  --docker-password=registry-password \
+  --docker-email=registry-user@org.com
 ```
