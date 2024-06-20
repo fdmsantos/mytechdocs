@@ -14,6 +14,7 @@ spec:
   schedulerName: my-scheduler # To Use Custom Scheduler
   securityContext:
     runAsUser: 1000
+  priorityClassName: high-priority-nonpreempting
   containers:
     - name: nginx-container
       image: nginx
@@ -39,6 +40,12 @@ spec:
             name: app-config
         - secretRef: # Inject Secret as Environment
             name: app-secret
+      volumeMounts:
+        - mountPath: /opt
+          name: data-volume
+        - mountPath: "/var/www/html"
+          name: web
+          readOnly: false
       resources:
         requests:
           memory: "1Gi"
@@ -67,6 +74,13 @@ spec:
     - name: app-secret-volume # Inject Secret as a file in a Volume
       secret:
         secretName: app-secret
+    - name: data-volume
+      hostPath: # That Works fine on Single Node
+        path: /data
+        type: Directory
+    - name: web
+      persistentVolumeClaim:
+        claimName: myclaim
   tolerations: # Scheduling
   - key: "app"
     operator: "Equal"
@@ -85,6 +99,26 @@ spec:
                 values:
                   - Large
                   - Medium
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: security
+                operator: In
+                values:
+                  - S1
+          topologyKey: topology.kubernetes.io/zone
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: security
+                  operator: In
+                  values:
+                    - S2
+            topologyKey: topology.kubernetes.io/zone
 ```
 
 ## Services
@@ -172,6 +206,99 @@ spec:
       app: monitoring-agent
   template:
     <POD YAML Template>
+```
+
+## Volumes
+
+### Persistent Volumes
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-vol1
+spec:
+  persistentVolumeReclaimPolicy: Retain # Supports Delete, Recycle and Retain
+  accessModes: [ "ReadWriteOnce" ] # Supports ReadOnlyMany, ReadWriteOnce and ReadWriteMany
+  capacity:
+   storage: 1Gi
+  local:
+   path: /tmp/data
+  nodeAffinity: # Must SET when using Local Volumes
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - example-node
+```
+
+### Persistent Volumes Claims
+
+```yaml 
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: myclaim
+spec:
+  accessModes: [ "ReadWriteOnce" ]
+  storageClassName: google-storage
+  resources:
+   requests:
+     storage: 1Gi
+```
+
+### Storage Class
+
+```yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+   name: google-storage
+provisioner: kubernetes.io/gce-pd
+volumeBindingMode: WaitForFirstConsumer
+
+parameters:
+  type: pd-standard
+  replication-type: none
+
+```
+
+### Ingress
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-wear-watch
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: False
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /wear
+            backend:
+              service:
+                name: wear-service
+                port: 
+                  number: 80
+          - path: /watch
+            backend:
+              service:
+                name: watch-service
+                port:
+                  number: 80
+    - host: watch.my-online-store.com
+      http:
+        paths:
+          - backend:
+              service:
+               name: watch-service
+               port:
+                 number: 80
 ```
 
 ## Network Policy
@@ -328,4 +455,17 @@ spec:
 ```shell
 kubectl create token <sa-account-name>
 kubectl create token <sa-account-name> # To create token
+```
+
+## Priority Classes
+
+```yaml
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: high-priority-nonpreempting
+value: 1000000
+preemptionPolicy: Never # PreemptLowerPriority
+globalDefault: false
+description: "This priority class will not cause other pods to be preempted."
 ```
