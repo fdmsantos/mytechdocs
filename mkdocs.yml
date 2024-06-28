@@ -58,6 +58,7 @@ nav:
       - Security: kubernetes/security.md
       - Core Components: kubernetes/coreComponents.md
       - Cluster Maintenance: kubernetes/clusterMaintenance.md
+      - Helm: kubernetes/helm.md
   - Cloud:
       - Azure:
           - Azure Virtual Desktop: cloud/azure/azd.md

@@ -68,6 +68,12 @@ systemctl restart kubelet
 kubectl uncordon node-1
 ```
 
+### Api Deprecations
+
+```shell
+kubectl convert -f <old-file> --output-version <new-api> # Necessary install convert plugin
+```
+
 ## Backups
 
 ![Backup Candidates](images/backup-candidates.png){ loading=lazy }

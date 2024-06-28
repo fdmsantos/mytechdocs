@@ -1,6 +1,8 @@
 # Kubernetes Resources
 
-## Pods
+## Workloads
+
+### Pods
 
 ```yaml
 apiVersion: v1
@@ -57,6 +59,18 @@ spec:
           runAsUser: 1000
           capabilities:
             add: ["MAC_ADMIN", "SYS_TIME"]
+      readinessProbe:
+        httpGet: # OR tcpSocket, exec
+          port: 8080
+          path: /api/ready
+        initialDelaySeconds: 10
+        periodSeconds: 5
+        failureThreshold: 8
+      livenessProbe:
+        exec:
+          command:
+            - cat
+            - /app/is_healthy
     - name: log-agent
       image: log-agent
   initContainers:
@@ -121,46 +135,7 @@ spec:
             topologyKey: topology.kubernetes.io/zone
 ```
 
-## Services
-
-![Services](images/services.png){ loading=lazy }
-
-### NodePort
-
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: myapp-service
-spec:
-  type: NodePort
-  ports:
-    - targetPort: 80
-      port: 80
-      nodePort: 30008
-  selector:
-    app: myapp
-    type: front-end
-```
-
-### Cluster IP
-
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
- name: back-end
-spec:
- type: ClusterIP
- ports:
- - targetPort: 80
-   port: 80
- selector:
-   app: myapp
-   type: back-end
-```
-
-## Deployments
+### Deployments
 
 ```yaml
 apiVersion: apps/v1
@@ -183,7 +158,7 @@ spec:
     maxUnavailable: 1
 ```
 
-### Commands
+#### Commands
 
 ```shell
 kubectl rollout status deployment/myapp-deployment
@@ -191,7 +166,7 @@ kubectl rollout history deployment/myapp-deployment
 kubectl rollout undo deployment/myapp-deployment
 ```
 
-## DaemonSets
+### DaemonSets
 
 ```yaml
 apiVersion: apps/v1
@@ -208,7 +183,92 @@ spec:
     <POD YAML Template>
 ```
 
-## Volumes
+### Jobs
+
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: random-error-job
+spec:
+  completions: 3
+  template:
+    spec:
+      containers:
+        - name: random-error
+          image: kodekloud/random-error
+      restartPolicy: Never
+```
+
+### CronJobs
+
+```yaml
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: reporting-cron-job
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      completions: 3
+      parallelism: 3
+      template:
+        spec:
+          containers:
+            - name: reporting-tool
+              image: reporting-tool
+          restartPolicy: Never
+```
+
+### StatefulSets
+
+```yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  template:
+    <POD YAML Template>
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
+  serviceName: mysql-h
+  volumeClaimTemplates:
+    - metadata:
+        name: data-volume
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 500Mi
+```
+
+### Replica Sets
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+ name: myapp-replicaset
+ labels:
+   app: myapp
+   type: front-end
+spec:
+ template:
+   <POD YAML Template>
+ replicas: 3
+ selector:
+   matchLabels:
+     type: front-end
+```
+
+## Storage
 
 ### Persistent Volumes
 
@@ -265,6 +325,63 @@ parameters:
 
 ```
 
+## Networking 
+
+### Services
+
+![Services](images/services.png){ loading=lazy }
+
+#### NodePort
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 80
+      port: 80
+      nodePort: 30008
+  selector:
+    app: myapp
+    type: front-end
+```
+
+#### Cluster IP
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+ name: back-end
+spec:
+ type: ClusterIP
+ ports:
+ - targetPort: 80
+   port: 80
+ selector:
+   app: myapp
+   type: back-end
+```
+
+#### Headless
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+ name: mysql-h
+spec:
+ clusterIP: None
+ ports:
+ - port: 80
+ selector:
+   app: myapp
+   type: back-end
+```
+
 ### Ingress
 
 ```yaml
@@ -301,7 +418,7 @@ spec:
                  number: 80
 ```
 
-## Network Policy
+### Network Policy
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -337,9 +454,11 @@ spec:
           port: 80
 ```
 
-## RBAC
+## Security
 
-### Role
+### RBAC
+
+#### Role
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -356,7 +475,7 @@ rules:
   verbs: ["create"]
 ```
 
-### Role Binding
+#### Role Binding
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -373,7 +492,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-### Cluster Role
+#### Cluster Role
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -386,7 +505,7 @@ rules:
   verbs: ["get", "list", "delete", "create"]
 ```
 
-### Cluster Role Binding
+#### Cluster Role Binding
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -401,6 +520,50 @@ roleRef:
   kind: ClusterRole
   name: cluster-administrator
   apiGroup: rbac.authorization.k8s.io
+```
+
+### Service Accounts
+
+```shell
+kubectl create token <sa-account-name>
+kubectl create token <sa-account-name> # To create token
+```
+
+### Admission Webhooks
+
+```yaml
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: "pod-policy.example.com"
+webhooks:
+  - name: "pod-policy.example.com"
+    clientConfig:
+      service:
+        name: "webhook-service"
+        namespace: "webhook-namespace"
+      caBundle: "..."
+    rules:
+      - apiGroups: [""]
+        apiVersions: ["v1"]
+        operations: ["CREATE"]
+        resources: ["pods"]
+        scope: "Namespaced"
+```
+
+## Scheduling
+
+### Priority Classes
+
+```yaml
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: high-priority-nonpreempting
+value: 1000000
+preemptionPolicy: Never # PreemptLowerPriority
+globalDefault: false
+description: "This priority class will not cause other pods to be preempted."
 ```
 
 ## Namespaces
@@ -431,41 +594,56 @@ spec:
     limits.memory: 10Gi
 ```
 
-## Replica Sets
+## Extending
+
+### Custom Resource Definition
+
+* Example New Resource:
 
 ```yaml
-apiVersion: apps/v1
-kind: ReplicaSet
+apiVersion: flights.com/v1
+kind: FlightTicket
 metadata:
- name: myapp-replicaset
- labels:
-   app: myapp
-   type: front-end
+  name: my-flight-ticket
 spec:
- template:
-   <POD YAML Template>
- replicas: 3
- selector:
-   matchLabels:
-     type: front-end
+  from: Mumbai
+  to: London
+  number: 2
 ```
 
-## Service Accounts
-
-```shell
-kubectl create token <sa-account-name>
-kubectl create token <sa-account-name> # To create token
-```
-
-## Priority Classes
+* CRD to Resource FlightTicket
 
 ```yaml
-apiVersion: scheduling.k8s.io/v1
-kind: PriorityClass
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
 metadata:
-  name: high-priority-nonpreempting
-value: 1000000
-preemptionPolicy: Never # PreemptLowerPriority
-globalDefault: false
-description: "This priority class will not cause other pods to be preempted."
+  name: flighttickets.flights.com
+spec:
+  scope: Namespaced
+  group: flights.com
+  names:
+    kind: FlightTicket
+    singular: flightticket
+    plural: flighttickets
+    shortNames:
+      - ft
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                from:
+                  type: string
+                to:
+                  type: string
+                number:
+                  type: integer
+                  minimum: 1
+                  maximum: 10
 ```
