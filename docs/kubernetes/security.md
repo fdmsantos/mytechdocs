@@ -107,8 +107,28 @@ kubectl get csr jane -o yaml
 echo "<certificate>" | base64 --decode # To Decode it
 ```
 
-
-
 ### Network Policies
 
 ![CNI Network Policies Supported](images/cni-network-policies-supported.png){ loading=lazy }
+
+## Service Account
+
+* Disable Auto Mount SA on default SA in SA Level
+
+```shell
+apiVersion: v1
+kidn: ServiceAccount
+metadata:
+  name: custom-sa
+automountServiceAccountToken: false
+```
+
+## RunTime Class
+
+```yaml
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: gvisor
+handler: runsc
+```

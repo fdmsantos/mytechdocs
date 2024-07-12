@@ -17,6 +17,7 @@ spec:
   securityContext:
     runAsUser: 1000
   priorityClassName: high-priority-nonpreempting
+  runningClassName: gvisor
   containers:
     - name: nginx-container
       image: nginx
@@ -57,6 +58,7 @@ spec:
           cpu: "2"
       securityContext:
           runAsUser: 1000
+          readOnlyRootFilesystem: true
           capabilities:
             add: ["MAC_ADMIN", "SYS_TIME"]
       readinessProbe:
