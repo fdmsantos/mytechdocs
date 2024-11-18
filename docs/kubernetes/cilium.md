@@ -61,6 +61,17 @@ spec:
 [Documentation](https://docs.cilium.io/en/stable/network/servicemesh/gateway-api/gateway-api/)
 
 ```yaml
+# Source: cilium/templates/cilium-gateway-api-class.yaml
+apiVersion: gateway.networking.k8s.io/v1
+kind: GatewayClass
+metadata:
+  name: cilium
+spec:
+  controllerName: io.cilium/gateway-controller
+
+```
+
+```yaml
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
@@ -92,4 +103,50 @@ spec:
     - backendRefs:
         - name: web
           port: 8080
+```
+
+### LoadBalancer IPAM
+
+```yaml
+apiVersion: "cilium.io/v2alpha1"
+kind: CiliumLoadBalancerIPPool
+metadata:
+name: "pool"
+spec:
+cidrs:
+- cidr: "20.0.10.0/24"
+```
+
+### Layer 2
+
+```yaml
+apiVersion: "cilium.io/v2alpha1"
+kind: CiliumL2AnnouncementPolicy
+metadata:
+  name: l2announcement-policy
+spec:
+  nodeSelector:
+    matchExpressions:
+      - key: node-role.kubernetes.io/control-plane
+        operator: DoesNotExist
+  interfaces:
+    - eth1
+  externalIPs: true
+  loadBalancerIPs: true
+```
+
+# Hubble
+
+```shell
+cilium hubble port-forward&
+hubble observe --last 20
+hubble observe -f
+hubble observe -f --output json | jq .
+hubble observe -f --port 53 -t l7
+```
+
+## Hubble UI
+
+```shell
+cilium hubble ui
 ```
