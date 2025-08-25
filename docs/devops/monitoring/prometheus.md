@@ -1,6 +1,10 @@
 # Prometheus
 
-[Udemy Course Github](https://github.com/aussiearef/Prometheus)
+[Udemy Prometheus Course Github](https://github.com/aussiearef/Prometheus)
+
+[Udemy Grafana Course Github](https://github.com/aussiearef/grafana-udemy)
+
+[Udemy Course Digest PDF](assets/Grafana-Prometheus-Info.pdf)
 
 ## Config
 
@@ -66,7 +70,6 @@ remote_write: # remove if you do not have Grafana Mimir
     basic_auth: #remove if your Mimir does not require authentication
       username: "admin"
       password: "password"
-
 
 ```
 

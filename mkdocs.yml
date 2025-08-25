@@ -64,8 +64,11 @@ nav:
   - DevOps:
       - Monitoring:
           - Prometheus: devops/monitoring/prometheus.md
+          - Grafana: devops/monitoring/grafana.md
           - Alert Manager: devops/monitoring/alertmanager.md
           - Loki: devops/monitoring/loki.md
+          - Alloy: devops/monitoring/alloy.md
+          - Mimir: devops/monitoring/mimir.md
   - Cloud:
       - Azure:
           - Azure Virtual Desktop: cloud/azure/azd.md

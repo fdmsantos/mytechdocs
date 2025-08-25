@@ -1,3 +1,44 @@
 # Loki
 
 ![Architecture](images/loki-architecture.png){ loading=lazy }
+
+## Promtail Config
+
+```yaml
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+  - job_name: system
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: varlogs
+          __path__: /var/log/*log
+          team: DevOps
+          env: Prod
+          component:
+    pipeline_stages:
+      - logfmt:
+          mapping:
+            component:
+      - labels:
+          component:
+
+  - job_name: shoehub
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: shoehub
+          app: shoehub
+          __path__: /var/log/shoehub/log*
+```
