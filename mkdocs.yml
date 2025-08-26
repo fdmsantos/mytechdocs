@@ -69,6 +69,8 @@ nav:
           - Loki: devops/monitoring/loki.md
           - Alloy: devops/monitoring/alloy.md
           - Mimir: devops/monitoring/mimir.md
+          - InfluxDB: devops/monitoring/influxdb.md
+          - Telegraf: devops/monitoring/telegraf.md
   - Cloud:
       - Azure:
           - Azure Virtual Desktop: cloud/azure/azd.md
