@@ -98,7 +98,9 @@ nav:
       - Bot Framework: programming/bot-framework.md
   - Unix OS:
       - Apps: unix/apps.md
-      - Networking: unix/networking.md
+      - Networking:
+          - Geral: unix/networking/networking.md
+          - StrongSwan: unix/networking/strongswan.md
   - Certifications:
       - Azure:
         - Data Engineer Associate:  certifications/azure/azure-data-engineer-associate.md
