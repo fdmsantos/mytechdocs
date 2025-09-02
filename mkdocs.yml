@@ -101,6 +101,7 @@ nav:
       - Networking:
           - Geral: unix/networking/networking.md
           - StrongSwan: unix/networking/strongswan.md
+          - DNS: unix/networking/dns.md
   - Certifications:
       - Azure:
         - Data Engineer Associate:  certifications/azure/azure-data-engineer-associate.md
