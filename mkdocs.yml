@@ -32,6 +32,7 @@ theme:
         name: Switch to light mode
 
 markdown_extensions:
+  - admonition
   - pymdownx.highlight:
       anchor_linenums: true
       auto_title: true
@@ -51,6 +52,7 @@ plugins:
   - search
 
 nav:
+  - Home: index.md
   - Kubernetes:
       - Resources: kubernetes/resources.md
       - Scheduling: kubernetes/scheduling.md
@@ -98,10 +100,44 @@ nav:
       - Bot Framework: programming/bot-framework.md
   - Unix OS:
       - Apps: unix/apps.md
+      - Containers:
+          - Podman: unix/containers/podman.md
       - Networking:
           - Geral: unix/networking/networking.md
           - StrongSwan: unix/networking/strongswan.md
           - DNS: unix/networking/dns.md
+  - Cortex Cloud:
+      - Overview: cortexcloud/cortexcloud.md
+      - Onboarding:
+          - GCP: cortexcloud/onboarding/gcp.md
+      - License: cortexcloud/license.md
+      - Application Security:
+          - ASPM: cortexcloud/application-security/aspm.md
+          - Software Supply Chain Security: cortexcloud/application-security/supply-chain.md
+          - IaC Security: cortexcloud/application-security/iac-security.md
+          - Software Composition Analysis: cortexcloud/application-security/sca.md
+          - Secrets Security: cortexcloud/application-security/secrets-security.md
+          - CI/CD Posture Management: cortexcloud/application-security/cicd-posture-management.md
+          - Open Partner Ecosystem: cortexcloud/application-security/open-partner-ecosystem.md
+      - Cloud Posture Security:
+          - CSPM: cortexcloud/cloud-posture/cspm.md
+          - CIEM: cortexcloud/cloud-posture/ciem.md
+          - DSPM: cortexcloud/cloud-posture/dspm.md
+          - AI-SPM: cortexcloud/cloud-posture/ai-spm.md
+          - Vulnerability Management: cortexcloud/cloud-posture/vulnerability-management.md
+          - Cloud Attack Surface Management (ASM): cortexcloud/cloud-posture/asm.md
+      - Cloud Runtime Security:
+          - Cloud Detection and Response (CDR): cortexcloud/cloud-runtime/cdr.md
+          - Container & Kubernetes Security: cortexcloud/cloud-runtime/container-kubernetes.md
+          - Cloud Workload Protection (CWP): cortexcloud/cloud-runtime/cwp.md
+          - API Security: cortexcloud/cloud-runtime/api-security.md
+          - Serverless Security: cortexcloud/cloud-runtime/serverless.md
+      - Security Operations:
+          - Cortex XSIAM: cortexcloud/security-operations/xsiam.md
+          - Cortex XDR: cortexcloud/security-operations/xdr.md
+          - Cortex XSOAR: cortexcloud/security-operations/xsoar.md
+          - Cortex Xpanse: cortexcloud/security-operations/xpanse.md
+          - Unit 42 MDR: cortexcloud/security-operations/unit42.md
   - Certifications:
       - Azure:
         - Data Engineer Associate:  certifications/azure/azure-data-engineer-associate.md

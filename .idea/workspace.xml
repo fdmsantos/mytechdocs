@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add DNS">
-      <change afterPath="$PROJECT_DIR$/docs/unix/containers/podman.md" afterDir="false" />
+    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add podman">
+      <change afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mytechdocs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mytechdocs.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GNUmakefile" beforeDir="false" afterPath="$PROJECT_DIR$/GNUmakefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +51,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/fsantos/Documents/personal/mytechdocs&quot;,
@@ -103,6 +109,12 @@
       <workItem from="1758525646376" duration="5000" />
       <workItem from="1758541231496" duration="24000" />
       <workItem from="1763072295528" duration="1967000" />
+      <workItem from="1775141684144" duration="4218000" />
+      <workItem from="1775216082858" duration="307000" />
+      <workItem from="1775218248860" duration="513000" />
+      <workItem from="1775223565319" duration="3428000" />
+      <workItem from="1775231508220" duration="303000" />
+      <workItem from="1775335614277" duration="1211000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />
@@ -136,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756850007177</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add podman">
+      <option name="closed" value="true" />
+      <created>1775141695253</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1775141695253</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +167,7 @@
     <MESSAGE value="Add Grafana, Loki, Alloy and Mimir" />
     <MESSAGE value="Add Influx DB and Telegraf" />
     <MESSAGE value="Add DNS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add DNS" />
+    <MESSAGE value="Add podman" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add podman" />
   </component>
 </project>
