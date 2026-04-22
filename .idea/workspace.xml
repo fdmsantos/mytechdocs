@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add ASPM">
+    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add Code to Cloud">
       <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +117,7 @@
       <workItem from="1775639522442" duration="7000" />
       <workItem from="1775639540871" duration="32000" />
       <workItem from="1776761185299" duration="295000" />
-      <workItem from="1776853035276" duration="2289000" />
+      <workItem from="1776853035276" duration="5344000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />
@@ -167,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776854623975</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add Code to Cloud">
+      <option name="closed" value="true" />
+      <created>1776855519894</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1776855519894</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +188,7 @@
     <MESSAGE value="Add DNS" />
     <MESSAGE value="Add podman" />
     <MESSAGE value="Add ASPM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ASPM" />
+    <MESSAGE value="Add Code to Cloud" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Code to Cloud" />
   </component>
 </project>
