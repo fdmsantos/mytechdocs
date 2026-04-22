@@ -63,3 +63,17 @@ ASPM is included in the **Cloud Posture Management** license.
 | Generic 3rd Party AppSec Collector |              |
 
 [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-Data-Sources)
+
+## Code-to-Cloud
+
+### Supported Integrations
+
+| Component  | Supported Provider / Build Tool                                 |
+|------------|-----------------------------------------------------------------|
+| VCS        | GitHub, GitLab, Bitbucket, Azure DevOps                         |
+| CI/CD      | GitHub Actions, GitLab CI/CD, Azure Pipeline, Jenkins, CircleCI |
+| Containers | Docker CLI, docker compose, docker buildx, Kaniko               |
+| VM Images  | AWS EC2 Image Builder, Packer (→ AWS AMI)                       |
+| IaC        | Terraform (.tf), CloudFormation (.yml, .json)                   |
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Code-to-Cloud)

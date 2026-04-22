@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add podman">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add ASPM">
       <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/asm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/asm.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +117,7 @@
       <workItem from="1775639522442" duration="7000" />
       <workItem from="1775639540871" duration="32000" />
       <workItem from="1776761185299" duration="295000" />
-      <workItem from="1776853035276" duration="1136000" />
+      <workItem from="1776853035276" duration="2289000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />
@@ -163,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775141695253</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add ASPM">
+      <option name="closed" value="true" />
+      <created>1776854623975</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1776854623975</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +179,7 @@
     <MESSAGE value="Add Influx DB and Telegraf" />
     <MESSAGE value="Add DNS" />
     <MESSAGE value="Add podman" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add podman" />
+    <MESSAGE value="Add ASPM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ASPM" />
   </component>
 </project>
