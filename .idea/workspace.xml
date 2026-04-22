@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add podman">
-      <change afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mytechdocs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mytechdocs.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GNUmakefile" beforeDir="false" afterPath="$PROJECT_DIR$/GNUmakefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/asm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/asm.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,6 +114,14 @@
       <workItem from="1775223565319" duration="3428000" />
       <workItem from="1775231508220" duration="303000" />
       <workItem from="1775335614277" duration="1211000" />
+      <workItem from="1775465256753" duration="410000" />
+      <workItem from="1775483377840" duration="964000" />
+      <workItem from="1775499244294" duration="2139000" />
+      <workItem from="1775592470721" duration="2228000" />
+      <workItem from="1775639522442" duration="7000" />
+      <workItem from="1775639540871" duration="32000" />
+      <workItem from="1776761185299" duration="295000" />
+      <workItem from="1776853035276" duration="1136000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />

@@ -29,12 +29,12 @@ Lists all internet-facing services (any device or software on a domain:port or I
 
 Key fields:
 
-| Field | Description |
-|---|---|
-| **Active Classifications** | Fingerprint-based identifiers of software, technologies, and behaviors (e.g., specific versions, configuration details, missing security headers). |
-| **Business Units** | Designation to classify assets and identify owning organizations (useful for subsidiaries / M&A). |
-| **Discovery Type** | **Directly Discovered** — definitively associated with your organization (on-prem IP, your certificate, managed cloud resource). **Colocated with your Services** — running on the same IP as a directly-discovered service. |
-| **Externally Inferred CVEs** | Identified by matching product name/version against the National Vulnerability Database. Requires additional investigation to confirm. |
-| **Externally Inferred Vulnerability Score** | Based on the highest CVSSv3 (or CVSSv2) score for inferred CVEs on the service. |
-| **Is Active** | Whether the service is currently observed on the internet. |
-| **Protocol** | Application-level protocol over which the service was validated. |
+| Field                                       | Description                                                                                                                                                                                                                  |
+|---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Active Classifications**                  | Fingerprint-based identifiers of software, technologies, and behaviors (e.g., specific versions, configuration details, missing security headers).                                                                           |
+| **Business Units**                          | Designation to classify assets and identify owning organizations (useful for subsidiaries / M&A).                                                                                                                            |
+| **Discovery Type**                          | **Directly Discovered** — definitively associated with your organization (on-prem IP, your certificate, managed cloud resource). **Colocated with your Services** — running on the same IP as a directly-discovered service. |
+| **Externally Inferred CVEs**                | Identified by matching product name/version against the National Vulnerability Database. Requires additional investigation to confirm.                                                                                       |
+| **Externally Inferred Vulnerability Score** | Based on the highest CVSSv3 (or CVSSv2) score for inferred CVEs on the service.                                                                                                                                              |
+| **Is Active**                               | Whether the service is currently observed on the internet.                                                                                                                                                                   |
+| **Protocol**                                | Application-level protocol over which the service was validated.                                                                                                                                                             |

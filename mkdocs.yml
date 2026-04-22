@@ -110,6 +110,7 @@ nav:
       - Overview: cortexcloud/cortexcloud.md
       - Onboarding:
           - GCP: cortexcloud/onboarding/gcp.md
+          - GitHub: cortexcloud/onboarding/github.md
       - License: cortexcloud/license.md
       - Application Security:
           - ASPM: cortexcloud/application-security/aspm.md
