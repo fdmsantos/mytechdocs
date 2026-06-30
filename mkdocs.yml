@@ -125,7 +125,6 @@ nav:
           - CIEM: cortexcloud/cloud-posture/ciem.md
           - DSPM: cortexcloud/cloud-posture/dspm.md
           - AI-SPM: cortexcloud/cloud-posture/ai-spm.md
-          - Vulnerability Management: cortexcloud/cloud-posture/vulnerability-management.md
           - Cloud Attack Surface Management (ASM): cortexcloud/cloud-posture/asm.md
       - Cloud Runtime Security:
           - Cloud Detection and Response (CDR): cortexcloud/cloud-runtime/cdr.md

@@ -4,6 +4,79 @@
 
 CSPM is included in the **Cloud Posture Management** license.
 
+## Vulnerability Management
+
+**More info:** [Cortex Cloud Vulnerability Management](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Vulnerability-management)
+
+Identifies, prioritizes, and remediates vulnerabilities across endpoints, code, and cloud — integrating into CI/CD pipelines and using runtime context to focus on what matters most.
+
+- **Findings** — A specific vulnerability instance discovered via scan. Policies are applied to prioritize findings and promote the most critical ones to issues.
+- **Issues** — Created when a finding matches a vulnerability policy. Each issue includes priority, assignee, status, asset context, and exploitability details.
+
+!!! note
+    For vulnerabilities detected via application security scans, refer to [Cortex Cloud Application Security](../application-security/aspm.md).
+
+### Vulnerability Intelligence
+
+**More info:** [Vulnerability Intelligence](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Vulnerability-Intelligence)
+
+Real-time feed of vulnerability data and threat intelligence from certified upstream sources (CVE databases, vendor feeds, commercial providers), enriched by a dedicated research team. Provides CVE metadata, affected packages/versions, exploit intelligence (EPSS, exploit maturity), and vendor advisory links.
+
+Each vulnerability has a **Cortex Vulnerability Risk Score (CVRS)** — a dynamic score from 0 to 100, updated daily, combining:
+
+| Factor | Source |
+|---|---|
+| Vulnerability Context | CVSS base score |
+| Exploit Intelligence | EPSS, CISA KEV, in-the-wild exploits, exploit maturity |
+| Asset Risk | Public internet exposure |
+| Environment Risk | Whether the package is actively in use |
+| Compensating Controls | Existing mitigations *(requires Exposure Management add-on)* |
+
+If the official CVSS score doesn't reflect the real risk in your environment, you can override it (**Posture Management → Vulnerability Management → Vulnerability Intelligence** → open vulnerability → Options → **Override Severity or CVSS**). Changes propagate platform-wide within ~1 hour.
+
+### Vulnerability Policies
+
+**More info:** [Vulnerability policies](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Vulnerability-policies)
+
+A vulnerability policy defines what action to take on findings that match specific criteria. Cortex Cloud includes predefined policies based on CVSS severity, EPSS severity, and Attack Surface Testing results. Custom policies can be created to match your organization's specific needs (e.g., only create issues for CVSS ≥ 9 on production servers, or block images with EPSS > 90% from being deployed to Kubernetes).
+
+Each finding is evaluated against policies in order — the first match wins, no further policies are evaluated.
+
+Each finding is evaluated against policies in order — the first match wins, no further policies are evaluated. More specific policies should be placed at the top; broader/generic policies at the bottom.
+
+A policy is composed of:
+
+- **Conditions** — Criteria that a finding must match (CVE attributes, EPSS score, CVSS score, exploit intelligence, etc.) and optional exclusions.
+- **Scope** — Asset groups the policy applies to. If none selected, applies to all assets.
+- **Action** — Defined per policy type (see below).
+
+**To create a policy:** **Posture Management → Rules & Policies → Policies → Vulnerability Management** → **+Add Policy**.
+
+#### Issue Creation
+
+Creates an issue for each finding that matches the policy. You define the severity of the issue, either a fixed value or inherited from the underlying CVE severity (**Use Default CVE Severity**).
+
+**Ignored CVEs, Asset Groups, and Assets** is a built-in policy always at position 0 in the list. It acts as a global exclusion list — findings still exist but no issues are created. You can configure:
+
+- **Ignored Vulnerabilities** — specific CVEs to suppress
+- **Ignored Asset Groups** — asset groups to suppress
+- **Ignored Assets** — individual assets to suppress
+
+Edit it via **Posture Management → Rules & Policies → Policies → Vulnerability Management** → click the first policy in the list.
+
+#### Prevention
+
+Blocks a deployment when a matching vulnerability is found. For example, prevent an image with a CVE with EPSS > 90% from being deployed to a Kubernetes cluster.
+
+| Type | Action | Description |
+|---|---|---|
+| Kubernetes pod actions | Block new deployments | New deployments are blocked by the Kubernetes Admission Controller when matching vulnerabilities are detected in an image. Requires agent installed and activated. |
+| Kubernetes pod actions | Do nothing | No action taken for matching findings on clusters with Admission Controller activated. |
+| Build actions | Fail the build | Fails the build in the CI/CD system when code with a matching vulnerability is checked in. Requires agent installed and activated on the CI/CD system. |
+| Build actions | Do nothing | No action taken for matching findings from code repository assets where the agent is activated. |
+
+Prevention policies support a **block grace period** — a buffer of X days after the fix publish date (or vulnerability publish date if no fix exists) before the blocking action kicks in. Value `0` = block immediately.
+
 ## Cloud Security
 
 Documentation: [Cloud Security Rules and Policies](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Cloud-Security-Rules-and-Policies)
