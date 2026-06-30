@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add Code to Cloud">
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +51,7 @@
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/fsantos/Documents/personal/mytechdocs&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/fsantos/Documents/redevaerk/projects/cvt/cvt-pmr-nautobot-device-onboarding&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -82,7 +83,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
       </set>
     </attachedChunks>
   </component>
@@ -117,7 +118,11 @@
       <workItem from="1775639522442" duration="7000" />
       <workItem from="1775639540871" duration="32000" />
       <workItem from="1776761185299" duration="295000" />
-      <workItem from="1776853035276" duration="5344000" />
+      <workItem from="1776853035276" duration="6977000" />
+      <workItem from="1780921701595" duration="2319000" />
+      <workItem from="1782747998685" duration="283000" />
+      <workItem from="1782805798446" duration="1590000" />
+      <workItem from="1782831221463" duration="733000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />
@@ -175,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776855519894</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add Code to Cloud">
+      <option name="closed" value="true" />
+      <created>1776865867544</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1776865867544</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
