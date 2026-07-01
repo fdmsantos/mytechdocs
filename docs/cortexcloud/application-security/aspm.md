@@ -171,6 +171,65 @@ Focuses on securing your continuous integration and continuous delivery pipeline
 
 [Documentation](https://docs-cortex.paloaltonetworks.com/r/BNCvOg6pEdBp~axnn92pBQ/drZaJdylPd3g6d2wfDJPBA)
 
+### Software Composition Analysis (SCA) scanners
+
+Inspects and manages the security and compliance of open-source and third-party dependencies, combining native scanning engines with ingested findings from third-party tools (e.g. Snyk, Semgrep) as part of the shift-left strategy.
+
+Native scanning requires an AppSec add-on license (Posture Management, Runtime, or Premium Cortex) and is currently limited to direct dependencies, extending to transitive dependencies when lock files are present. Third-party ingestion extends coverage by centralizing existing external security data on the same platform.
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Software-Composition-Analysis-SCA-scanners?tocId=LmTGURG0JJ9s0cLHy4TpJg)
+
+#### Supported SCA Frameworks and Languages
+
+| Language     | Vulnerabilities | Operational Risk | License Detection | Transitive Dependencies | Root Fix Detection |
+|--------------|------------------|-------------------|---------------------|---------------------------|----------------------|
+| JavaScript   | Yes              | Yes               | Yes                 | Yes                       | Yes                  |
+| Python       | Yes              | Yes               | Yes                 | Yes                       | Yes                  |
+| Go           | Yes              | Yes               | Yes                 | Yes                       | Yes                  |
+| Java         | Yes              | Yes               | Yes                 | Yes                       | Yes                  |
+| Kotlin       | Yes              | Yes               | Yes                 | Yes                       | Yes                  |
+| Ruby         | Yes              | No                | No                  | Yes                       | No                   |
+| .NET (C#)    | Yes              | Yes               | Yes                 | Yes                       | Yes                  |
+| PHP          | Yes              | No                | Yes                 | Yes                       | No                   |
+| Rust         | Yes              | Yes               | Yes                 | Yes                       | Yes                  |
+
+#### SCA Support Matrix by Language
+
+| Language   | Package Manager | Manifest Files                                                                          | Supported Versions                                                                              |
+|------------|------------------|------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| JavaScript | npm              | package.json, package-lock.json                                                          | Lockfile v1, v2, v3                                                                                |
+| JavaScript | yarn             | package.json, yarn.lock                                                                   | Yarn v1, v2, v3, v4                                                                                |
+| Python     | pip              | requirements.txt, Pipfile, Pipfile.lock                                                  | Python v3.9 and above                                                                              |
+| Go         | Go               | go.mod, go.sum, Gopkg.lock                                                                | Go v1.11 and above                                                                                 |
+| Java       | Maven            | pom.xml                                                                                   | Maven v3.x and v4.x                                                                                |
+| Java       | Gradle           | build.gradle, settings.gradle                                                             | Gradle v4.x through v9.x                                                                           |
+| Kotlin     | Maven            | pom.xml                                                                                   | Maven v3.x and v4.x                                                                                |
+| Kotlin     | Gradle           | build.gradle.kts, settings.gradle.kts                                                     | Gradle v4.x through v9.x                                                                           |
+| Ruby       | —                | Gemfile, Gemfile.lock, gemspec                                                            | Ruby v2.5.x through v3.4.x                                                                         |
+| .NET       | —                | .csproj, packages.config, project.assets.json, packages.lock.json, paket.lock            | .NET v5.0 through v10.0, .NET Framework v4.6 through v4.8.x, .NET Core v2.0 through v3.x           |
+| PHP        | Composer         | composer.json, composer.lock                                                              | PHP v8.3 and above                                                                                 |
+| Rust       | Cargo            | Cargo.toml, Cargo.lock                                                                    | Any version of Rust                                                                                |
+
+#### License Miscompliance Findings
+
+License miscompliance findings are potential licensing vulnerabilities in your open-source packages. Promoting a finding to an issue lets you address the non-compliance and keep your software supply chain compliant.
+
+The Licenses Findings table (under **Application Security → Issues → Licenses → Findings**) is a filtered view of the broader Findings table (Cases & Issues), showing only license miscompliance findings — but limited to those detected via **periodic scans**. The full Findings table also includes license findings from PR and CI scans.
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/License-miscompliance-findings)
+
+#### Open-Source License Categories
+
+Licenses are scanned as part of the SCA vulnerability scan. Critical, High, and Medium license miscompliance findings are promoted to issues. Cortex Cloud ships three default license categories, each identified via SPDX identifiers:
+
+| Category                  | Severity | Description |
+|-----------------------------|----------|-------------|
+| Non-Permissive Licenses     | High     | Restrictive licenses that limit how you can use, modify, and distribute the software — may block integration into certain projects or require a commercial license for specific uses |
+| Strong Copyleft Licenses    | High     | Licenses (e.g. GPL) that require derivative works to be distributed under the same copyleft terms as the original |
+| Weak Copyleft Licenses      | Medium   | Licenses that allow combining the code with other licenses, including proprietary ones, without forcing the entire derivative work under the same copyleft terms |
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Open-source-software-license-categories?tocId=ESEUm25~KVWV5Af8ylY2FQ)
+
 ## Code Security
 
 Identifies and helps mitigate security issues directly within your source code, including vulnerabilities in Infrastructure-as-Code (IaC) and open-source components, from the earliest stages of development.

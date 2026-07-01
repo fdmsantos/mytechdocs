@@ -115,7 +115,6 @@ nav:
       - Application Security:
           - ASPM: cortexcloud/application-security/aspm.md
           - IaC Security: cortexcloud/application-security/iac-security.md
-          - Software Composition Analysis: cortexcloud/application-security/sca.md
           - Secrets Security: cortexcloud/application-security/secrets-security.md
           - CI/CD Posture Management: cortexcloud/application-security/cicd-posture-management.md
           - Open Partner Ecosystem: cortexcloud/application-security/open-partner-ecosystem.md

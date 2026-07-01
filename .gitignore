@@ -1,0 +1,19 @@
+# Python
+.venv/
+.venvmete/
+venv/
+__pycache__/
+*.pyc
+
+# MkDocs build output
+site/
+
+# IDE
+.idea/
+.vscode/
+
+# Playwright MCP
+.playwright-mcp/
+
+# OS
+.DS_Store

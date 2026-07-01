@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add vulnerability management">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add .gitignore">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/cortexcloud/application-security/images/aspm-workflow.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/supply-chain.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/sca.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +126,7 @@
       <workItem from="1782747998685" duration="283000" />
       <workItem from="1782805798446" duration="1590000" />
       <workItem from="1782831221463" duration="5576000" />
-      <workItem from="1782899295412" duration="9136000" />
+      <workItem from="1782899295412" duration="10611000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />
@@ -217,7 +216,31 @@
       <option name="project" value="LOCAL" />
       <updated>1782836794514</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add Cortex Cloud ASPM">
+      <option name="closed" value="true" />
+      <created>1782912486335</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1782912486335</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add .gitignore">
+      <option name="closed" value="true" />
+      <created>1782912557108</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1782912557108</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add .gitignore">
+      <option name="closed" value="true" />
+      <created>1782912560142</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1782912560142</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +257,8 @@
     <MESSAGE value="Add Cortex Cloud CSPM" />
     <MESSAGE value="Add Cortex Cloud CSPM Cloud Security" />
     <MESSAGE value="Add vulnerability management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add vulnerability management" />
+    <MESSAGE value="Add Cortex Cloud ASPM" />
+    <MESSAGE value="Add .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add .gitignore" />
   </component>
 </project>
