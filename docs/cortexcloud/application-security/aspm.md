@@ -235,3 +235,109 @@ Licenses are scanned as part of the SCA vulnerability scan. Critical, High, and 
 Identifies and helps mitigate security issues directly within your source code, including vulnerabilities in Infrastructure-as-Code (IaC) and open-source components, from the earliest stages of development.
 
 [Documentation](https://docs-cortex.paloaltonetworks.com/r/BNCvOg6pEdBp~axnn92pBQ/TJUUzTRnShyUH~OazRZTNA)
+
+Native scanners, plus ingestion of third-party scanner data, provide comprehensive visibility into your security posture as part of a shift-left strategy:
+
+### Software Composition Analysis (SCA) Scanners
+
+Automates the inspection of open-source and third-party dependencies: identifies known vulnerabilities (CVEs), assesses license compliance, and detects package operational risks such as outdated or unmaintained components. See [Software Composition Analysis (SCA) scanners](#software-composition-analysis-sca-scanners) under Supply Chain Security for full details.
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Software-Composition-Analysis-SCA-scanners?tocId=iJan9ySjJiAIFRN_AftNAA)
+
+### Secrets Scanner
+
+Detects hardcoded secrets — API keys, passwords, tokens — across repositories and code, enabling early remediation before credentials are exploited.
+
+- **Supported file types**: any plaintext file — not encrypted, not compressed (e.g. `.zip`), and not compiled (e.g. `.jar`)
+- **Entropy analysis**: signatures analyze the randomness of strings; highly random (high entropy) strings can indicate a potential secret
+- **Noise reduction**: entropy findings must also match specific keywords associated with secrets alongside the randomness score, to reduce false positives
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Secrets-scans)
+
+### IaC Misconfiguration Scanner
+
+Analyzes infrastructure configuration files prior to deployment to detect misconfigurations, insecure defaults, and compliance violations, preventing vulnerabilities from reaching operational environments.
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Infrastructure-as-Code-IaC-misconfiguration-scanner)
+
+Supported frameworks and languages:
+
+- Ansible
+- ARM
+- Bicep
+- CloudFormation
+- Dockerfile
+- Helm
+- Kubernetes
+- Kustomize
+- OpenAPI
+- OpenTofu
+- Terraform
+- Terraform Plan
+
+#### Investigate and Remediate Issues by Category
+
+The IaC side panel organizes findings into dedicated tabs by issue category. Fixes are executed either directly from these tabs (in-context remediation) or from the main inventory tables (global management).
+
+| Tab Name       | Scanner Type | Description and Remediation Options |
+|-----------------|--------------|----------------------------------------|
+| Configurations  | IaC          | Security misconfigurations and policy violations detected in the infrastructure template. **Fix PR**: automatically generates a Pull Request applying the recommended remediation code to the repository. **Manual fix**: use the presented code snippets to manually update the template in your native VCS environment |
+| Secrets         | Secrets      | Hardcoded credentials and sensitive tokens detected within the IaC manifest. **Manual guidance**: Secrets issues do not support automated Fix PRs and always require manual remediation to revoke, rotate, and remove the exposed credentials |
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Investigate-IaC-assets)
+
+### IaC Drift Detection Scanner
+
+Identifies discrepancies between the desired state defined in your IaC templates and the actual state of deployed cloud resources. Detects unauthorized changes, manual overrides, and configuration drift, ensuring the code repository remains the single source of truth and surfacing security-critical deviations before they introduce vulnerabilities into live environments.
+
+**Rule mapping (Critical)**: Drift is calculated only for IaC rules mapped to a corresponding CSPM rule. Rules without this mapping lack a runtime signal and cannot generate drift issues. If a declared resource cannot be resolved to a specific runtime resource via this mapping, drift is not evaluated.
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/IaC-Drift-Detection-scans)
+
+### Scans
+
+Cortex Cloud aggregates scan results across the SDLC from three scan types into dedicated inventory views, surfacing scan health, issue severity breakdowns, and findings by security category.
+
+| Scan Type              | Description |
+|--------------------------|-------------|
+| Branch Periodic Scan     | Scans code branches on a schedule to identify vulnerabilities early in development |
+| Pull Request Scan        | Scans code changes within pull requests to prevent the introduction of new vulnerabilities |
+| CI Scan                  | Detects exposed secrets, misconfigurations, package vulnerabilities, and license non-compliance in your CI pipelines |
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Application-Security-scans-management)
+
+### CLI
+
+The Application Security CLI, part of the Cortex CLI, lets developers and security teams integrate security checks directly into their development workflows.
+
+- **Scan behavior**: scans generate assets, issues, and findings; if one scanner (e.g. Secrets) fails, the others keep running, and failures trigger an error message naming the failed scanner
+- **Local developer workflows**: run manual, ad-hoc scans locally to catch vulnerabilities and misconfigurations before committing
+- **CI/CD pipeline automation**: acts as the core integration mechanism for automated pipelines — inserted into CI tools (Jenkins, GitHub Actions, CircleCI, GitLab Runner) as a wrapper to enforce security guardrails and block risky deployments
+
+Full CLI documentation (requirements, installation, authentication, proxy configuration, command reference) is consolidated in the main Cortex CLI guide.
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Application-Security-CLI)
+
+### IDE
+
+Supported IDEs: VS Code and all JetBrains offerings (e.g. IntelliJ, PyCharm).
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/IDE)
+
+### Developer Suppressions
+
+| Scanner / Platform          | Supported File(s)                                   | Suppression Method |
+|-------------------------------|--------------------------------------------------------|-----------------------|
+| Terraform                     | `.tf`                                                   | Inline comment |
+| CloudFormation                 | `.yml`, `.json`                                         | Inline comment next to the resource, or the resource's Metadata section |
+| Dockerfile                     | Dockerfile                                              | Inline comment (any line) |
+| Kubernetes                     | Manifests                                               | Annotation |
+| Secrets                        | Any scanned file                                        | Inline comment (before, after, or next to the line) |
+| SCA – Python                   | `requirements.txt`                                      | Inline comment (anywhere in file) |
+| SCA – .NET                     | `Paket`, `*.csproj`                                      | Inline comment / XML comment |
+| SCA – Java/Kotlin              | `gradle.properties`, `pom.xml`, `build.gradle`          | Inline comment / XML comment |
+| SCA – Ruby                     | `Gemfile`                                                | Inline comment (anywhere in file) |
+| SCA – JavaScript               | `package.json`, `bower.json`                             | Comment in the metadata section (also applies to lock files, e.g. `yarn.lock`) |
+| SCA – Go                       | `go.mod` (also applies to `go.sum`)                      | Inline comment (anywhere in file) |
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Developer-Suppressions)
