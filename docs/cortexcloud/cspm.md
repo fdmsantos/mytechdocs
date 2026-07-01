@@ -303,11 +303,11 @@ An assessment profile runs scans on asset groups to check whether the assets adh
 
 Custom cloud security rules don't automatically generate findings, so for custom compliance standards based on custom rules, you must also create a cloud security policy that includes those rules — otherwise assessment results will be inaccurate.
 
-| Component | Requirements |
-|---|---|
-| **Custom compliance standard** | Create a custom compliance standard as usual. |
-| **Custom compliance controls** | Create custom compliance controls and populate the custom standard with the relevant custom controls. |
-| **Custom cloud security rules** | Create custom cloud security rules that implement the detection logic for the corresponding controls, and associate them with the relevant custom compliance controls. |
-| **Asset group** | Create an asset group with the appropriate scope of assets for the custom compliance standard. |
-| **Assessment profile** | Create an assessment profile for the custom standard using the asset group created above. Configure reporting as desired. |
+| Component                        | Requirements                                                                                                                                                                                                                                                      |
+|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Custom compliance standard**   | Create a custom compliance standard as usual.                                                                                                                                                                                                                     |
+| **Custom compliance controls**   | Create custom compliance controls and populate the custom standard with the relevant custom controls.                                                                                                                                                             |
+| **Custom cloud security rules**  | Create custom cloud security rules that implement the detection logic for the corresponding controls, and associate them with the relevant custom compliance controls.                                                                                            |
+| **Asset group**                  | Create an asset group with the appropriate scope of assets for the custom compliance standard.                                                                                                                                                                    |
+| **Assessment profile**           | Create an assessment profile for the custom standard using the asset group created above. Configure reporting as desired.                                                                                                                                         |
 | **Custom cloud security policy** | Create a cloud security policy with **Rules** scope = *Compliance Standards* → *Contains* → your custom compliance standard, and **Scope** = the asset group used for the assessment profile. Required because custom rules don't generate findings on their own. |

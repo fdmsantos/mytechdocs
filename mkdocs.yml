@@ -108,18 +108,13 @@ nav:
           - DNS: unix/networking/dns.md
   - Cortex Cloud:
       - Overview: cortexcloud/cortexcloud.md
+      - Cloud Security Posture Management: cortexcloud/cspm.md
+      - Application Security Posture Management: cortexcloud/aspm.md
       - Onboarding:
           - GCP: cortexcloud/onboarding/gcp.md
           - GitHub: cortexcloud/onboarding/github.md
       - License: cortexcloud/license.md
-      - Application Security:
-          - ASPM: cortexcloud/application-security/aspm.md
-          - IaC Security: cortexcloud/application-security/iac-security.md
-          - Secrets Security: cortexcloud/application-security/secrets-security.md
-          - CI/CD Posture Management: cortexcloud/application-security/cicd-posture-management.md
-          - Open Partner Ecosystem: cortexcloud/application-security/open-partner-ecosystem.md
       - Cloud Posture Security:
-          - CSPM: cortexcloud/cloud-posture/cspm.md
           - CIEM: cortexcloud/cloud-posture/ciem.md
           - DSPM: cortexcloud/cloud-posture/dspm.md
           - AI-SPM: cortexcloud/cloud-posture/ai-spm.md

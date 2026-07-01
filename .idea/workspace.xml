@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add .gitignore">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/cortexcloud/application-security/images/aspm-workflow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/sca.md" beforeDir="false" />
+    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Finalize Cortex Cloud Code Security">
+      <change afterPath="$PROJECT_DIR$/docs/cortexcloud/aspm.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/cicd-posture-management.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/iac-security.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/images/aspm-workflow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/open-partner-ecosystem.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/secrets-security.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +131,7 @@
       <workItem from="1782747998685" duration="283000" />
       <workItem from="1782805798446" duration="1590000" />
       <workItem from="1782831221463" duration="5576000" />
-      <workItem from="1782899295412" duration="10611000" />
+      <workItem from="1782899295412" duration="13919000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />
@@ -240,7 +245,23 @@
       <option name="project" value="LOCAL" />
       <updated>1782912560142</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Finalize Cortex Cloud Supply Chain section">
+      <option name="closed" value="true" />
+      <created>1782914278852</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1782914278852</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Finalize Cortex Cloud Code Security">
+      <option name="closed" value="true" />
+      <created>1782917088227</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1782917088227</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +280,8 @@
     <MESSAGE value="Add vulnerability management" />
     <MESSAGE value="Add Cortex Cloud ASPM" />
     <MESSAGE value="Add .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add .gitignore" />
+    <MESSAGE value="Finalize Cortex Cloud Supply Chain section" />
+    <MESSAGE value="Finalize Cortex Cloud Code Security" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalize Cortex Cloud Code Security" />
   </component>
 </project>

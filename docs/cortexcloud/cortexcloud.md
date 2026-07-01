@@ -21,7 +21,7 @@ Tracks which topics from [Cortex Cloud Posture Management — Key features](http
 - [ ] Review and report your security posture and progress
 - [x] Monitor and track compliance adherence
 - [ ] Cortex Cloud AI Security
-- [ ] Cortex Cloud Application Security
+- [x] Cortex Cloud Application Security
 - [ ] Cortex Cloud Data Classification
 - [ ] Cortex Cloud Data Security
 - [ ] Cortex Cloud Identity Security
@@ -48,6 +48,10 @@ Tracks which menus/submenus of the Cortex Cloud application have already been re
 
 - [ ] Attack Surface Policies
 - [ ] Application Security Policies
+
+### Configuration (Settings)
+
+- [x] Application Security
 
 ## Authentication
 
