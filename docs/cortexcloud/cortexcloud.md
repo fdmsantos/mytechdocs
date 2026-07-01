@@ -2,6 +2,53 @@
 
 Official documentation: [Get started with Cortex Cloud](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Get-started-with-Cortex-Cloud)
 
+## Documentation Tracking
+
+Tracks which topics from [Cortex Cloud Posture Management — Key features](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Key-features) TOC have already been reviewed.
+
+- [ ] Get started with Cortex Cloud
+- [ ] What is Cortex Cloud Posture Management?
+- [ ] Supported web browsers
+- [ ] Use the interface
+- [ ] In-product support case creation
+- [ ] Understand your user persona
+- [ ] Fair Usage policy for Cortex Cloud
+- [ ] Understand license plans
+- [ ] Onboard and configure Cortex Cloud
+- [ ] Review inventory and explore your cloud environment
+- [ ] Review and prioritize posture issues
+- [ ] Agentic Assistant chat
+- [ ] Review and report your security posture and progress
+- [x] Monitor and track compliance adherence
+- [ ] Cortex Cloud AI Security
+- [ ] Cortex Cloud Application Security
+- [ ] Cortex Cloud Data Classification
+- [ ] Cortex Cloud Data Security
+- [ ] Cortex Cloud Identity Security
+- [ ] Cloud ASM
+- [ ] Network exposure detection
+- [x] Vulnerability management
+- [x] Cloud Security Rules and Policies
+- [x] Cloud Workload Policies and Rules
+- [x] Base Images Rule
+- [ ] Serverless function posture security
+- [ ] Data management
+- [ ] Cortex Cloud Data Sources
+- [ ] Marketplace
+- [ ] Cortex CLI
+- [ ] Cortex Cloud XQL
+- [ ] Graph Search
+- [ ] API specification inventory
+
+## Application Menu Tracking
+
+Tracks which menus/submenus of the Cortex Cloud application have already been reviewed.
+
+### Posture Management → Rules & Policies
+
+- [ ] Attack Surface Policies
+- [ ] Application Security Policies
+
 ## Authentication
 
 ### SSO

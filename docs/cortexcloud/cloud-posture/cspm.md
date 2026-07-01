@@ -273,3 +273,41 @@ Defines which registry images are considered foundational base images in the org
 Rules can be created from **Posture Management → Rules & Policies → Rules → Base Images** or directly from a Registry Image asset card (**Inventory → Assets → All Assets → Compute → Container Images** → More options → *Add base image rule*).
 
 > Changes take up to **6 hours** to propagate across assets.
+
+## Compliance
+
+Measures how well your cloud assets adhere to industry, regulatory, and organizational standards, by continuously assessing assets against the requirements defined in a chosen compliance standard.
+
+**Standards** are guidelines organizations follow to comply with industry best practices, regulations, and internal policies. A standard is made up of **controls** — measures that ensure compliance and mitigate risk, and can be grouped into categories (e.g. RBAC, Pod security). Each control is in turn built from one or more **rules** — the specific checks that run on an asset. Both catalogs include built-in industry standards/controls as well as custom organizational ones.
+
+- **[Choose a compliance standard](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Choose-compliance-standards-from-the-compliance-catalog)** — Select the compliance standard(s) to track from the built-in compliance catalog (e.g. CIS, PCI DSS, NIST, SOC 2, ISO 27001).
+- **[Create a compliance assessment](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Use-an-assessment-profile-to-run-compliance-checks-on-your-assets)** — Use an assessment profile (compliance standard(s) + asset scope) to run compliance checks against your assets.
+- **[Review the results](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/View-and-manage-compliance-assessments-and-reports)** — View and manage compliance assessments and reports.
+
+### Associate a Custom Control to a Detection Rule
+
+Documentation: [Associate a custom control to a detection rule](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Associate-a-custom-control-to-a-detection-rule)
+
+> **Note:** Custom rules can only be associated with custom compliance controls.
+
+| Rule Type | OOTB rules | Custom rules |
+|---|---|---|
+| **Cloud workload rules** | N/A | When creating or editing custom cloud workload rules, you can associate custom compliance controls with them. |
+| **Cloud security rules** — Note: only `Config`, `Identity`, and `AI` rule types support this. | You can edit existing out-of-the-box cloud security rules and associate custom compliance controls with them. | When creating or editing custom cloud security rules, you can associate custom compliance controls with them. |
+
+### Assessment Profile
+
+An assessment profile runs scans on asset groups to check whether the assets adhere to a specific standard. To create one: **Posture Management → Compliance → Assessment Profiles → Create New Assessment**, then select a compliance standard and one or more asset groups to run it against.
+
+**Documentation:** [Configuring assessments for custom compliance standards based on custom cloud security rules](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Configuring-assessments-for-custom-compliance-standards-based-on-custom-cloud-security-rules)
+
+Custom cloud security rules don't automatically generate findings, so for custom compliance standards based on custom rules, you must also create a cloud security policy that includes those rules — otherwise assessment results will be inaccurate.
+
+| Component | Requirements |
+|---|---|
+| **Custom compliance standard** | Create a custom compliance standard as usual. |
+| **Custom compliance controls** | Create custom compliance controls and populate the custom standard with the relevant custom controls. |
+| **Custom cloud security rules** | Create custom cloud security rules that implement the detection logic for the corresponding controls, and associate them with the relevant custom compliance controls. |
+| **Asset group** | Create an asset group with the appropriate scope of assets for the custom compliance standard. |
+| **Assessment profile** | Create an assessment profile for the custom standard using the asset group created above. Configure reporting as desired. |
+| **Custom cloud security policy** | Create a cloud security policy with **Rules** scope = *Compliance Standards* → *Contains* → your custom compliance standard, and **Scope** = the asset group used for the assessment profile. Required because custom rules don't generate findings on their own. |

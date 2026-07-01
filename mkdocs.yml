@@ -114,7 +114,6 @@ nav:
       - License: cortexcloud/license.md
       - Application Security:
           - ASPM: cortexcloud/application-security/aspm.md
-          - Software Supply Chain Security: cortexcloud/application-security/supply-chain.md
           - IaC Security: cortexcloud/application-security/iac-security.md
           - Software Composition Analysis: cortexcloud/application-security/sca.md
           - Secrets Security: cortexcloud/application-security/secrets-security.md

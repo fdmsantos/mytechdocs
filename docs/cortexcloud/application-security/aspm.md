@@ -2,71 +2,66 @@
 
 ## Overview
 
-ASPM is included in the **Cloud Posture Management** license.
+### Base Licenses
 
-## Supported Data Sources
+You must have at least one of the following active base licenses to access the Application Security module:
 
-### Version Control Systems
+- Cloud Posture Security or Cloud Runtime Security
+- XSIAM Premium
 
-| Data Source           | Type    |
-|-----------------------|---------|
-| AWS CodeCommit        | Cloud   |
-| Azure DevOps          | Cloud   |
-| Bitbucket Cloud       | Cloud   |
-| Bitbucket Data Center | On-Prem |
-| GitHub Cloud          | Cloud   |
-| GitHub Enterprise     | On-Prem |
-| GitLab SaaS           | Cloud   |
-| GitLab Self Managed   | On-Prem |
+### Module Components
 
-[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-Data-Sources)
+| Component                                | License Requirement                                                                                                       |
+|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Application Security Posture Management (ASPM) | Included with base license                                                                                          |
+| Supply Chain Security                      | Included with base license                                                                                                 |
+| Code Security                              | Requires a separate Application Security Add-on purchase in addition to your existing Cloud (Posture or Runtime) or XSIAM Premium base license |
 
-### CI/CD Pipeline Systems
+## Data Sources
 
-| Data Source | Type    |
-|-------------|---------|
-| CircleCI    | Cloud   |
-| Jenkins     | On-Prem |
+| Category                       | Data Source                        | Details    | SDLC Stage  | Link |
+|---------------------------------|-------------------------------------|------------|-------------|------|
+| Version Control Systems         | AWS CodeCommit                      | Cloud      | Code        | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/AWS-CodeCommit) |
+| Version Control Systems         | Azure DevOps                        | Cloud      | Code        | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Azure-DevOps) |
+| Version Control Systems         | Bitbucket Cloud                     | Cloud      | Code        | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Bitbucket-Cloud) |
+| Version Control Systems         | Bitbucket Data Center               | On-Prem    | Code        | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Bitbucket-Data-Center) |
+| Version Control Systems         | GitHub Cloud                        | Cloud      | Code        | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/GitHub-Cloud) |
+| Version Control Systems         | GitHub Enterprise                   | On-Prem    | Code        | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/GitHub-Enterprise-On-Prem) |
+| Version Control Systems         | GitLab SaaS                         | Cloud      | Code        | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/GitLab-SaaS) |
+| Version Control Systems         | GitLab Self Managed                 | On-Prem    | Code        | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/GitLab-Self-Managed-On-Prem) |
+| CI/CD Pipeline Systems          | CircleCI                            | Cloud      | Build/Deploy | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/CircleCI-for-CI/CD-pipeline-scans) |
+| CI/CD Pipeline Systems          | Jenkins                             | On-Prem    | Build       | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Jenkins-for-CI/CD-pipeline-scans) |
+| CI Tools                        | AWS CodeBuild                       |            | Build/Deploy | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/AWS-CodeBuild) |
+| CI Tools                        | CircleCI                            | Code scans | Build/Deploy | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/CircleCI-for-code-scans) |
+| CI Tools                        | Cortex CLI                          |            | Cross-stage | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Connect-Cortex-CLI?tocId=~jZq~7cT788cb4CJ~WlqIg) |
+| CI Tools                        | GitHub Actions                      |            | Build       | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/GitHub-Actions) |
+| CI Tools                        | Jenkins                             | Code scans | Build       | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Jenkins-for-code-scans) |
+| CI Tools                        | Terraform Cloud                     | Run Tasks  | Build/Deploy | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Terraform-Cloud-Run-Tasks) |
+| CI Tools                        | Terraform Enterprise                | Run Tasks  | Build/Deploy | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Terraform-Enterprise-Run-Tasks) |
+| Private Package Registries      | JFrog Artifactory                   | On-Prem    | Cross-stage | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-JFrog-Artifactory) |
+| Third-Party Security Scanners   | Semgrep                             | SCA & SAST | Cross-stage | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Semgrep) |
+| Third-Party Security Scanners   | Snyk                                | SCA & SAST | Cross-stage | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Snyk) |
+| Third-Party Security Scanners   | SonarQube                           |            | Cross-stage | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/SonarQube) |
+| Third-Party Security Scanners   | Veracode                            |            | Cross-stage | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Veracode) |
+| Third-Party Security Scanners   | Generic 3rd Party AppSec Collector  |            | Cross-stage | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Generic-3rd-Party-AppSec-Collector) |
 
-[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-Data-Sources)
+## Application Security Posture Management (ASPM)
 
-### CI Tools
+Provides a consolidated view of application risks and vulnerabilities across your environment, enabling you to understand and manage your overall security posture.
 
-| Data Source          | Notes      |
-|----------------------|------------|
-| AWS CodeBuild        |            |
-| CircleCI             | Code scans |
-| Cortex CLI           |            |
-| GitHub Actions       |            |
-| Jenkins              | Code scans |
-| Terraform Cloud      | Run Tasks  |
-| Terraform Enterprise | Run Tasks  |
+ASPM does not execute scans. Detection and finding generation belong to Code Security (native scanners) and the Supply Chain Security pillar (VCS repository and CI/CD pipeline analysis). ASPM evaluates the findings against unified policies and orchestrates the resulting issues through to remediation.
 
-[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-Data-Sources)
+![ASPM Workflow](images/aspm-workflow.png){ loading=lazy }
 
-### Private Package Registries
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/BNCvOg6pEdBp~axnn92pBQ/Bw25CrPQtJJBsL9se8pEhQ)
 
-| Data Source       | Type    |
-|-------------------|---------|
-| JFrog Artifactory | On-Prem |
+### Code To Cloud
 
-[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-Data-Sources)
+Full Code to Cloud (C2C) coverage is achieved when Cortex Cloud can resolve the following chain: Repository → Pipeline → Image → (optional Registry) → Runtime resources (including VMs, VM images, and IaC-defined infrastructure)
 
-### Third-Party Security Scanners
+When relationships cannot be resolved, for example, due to missing YOR tags or pipeline integrations, Cortex Cloud detects coverage gaps and provides specific configuration steps to fix them.
 
-| Data Source                        | Capabilities |
-|------------------------------------|--------------|
-| Semgrep                            | SCA & SAST   |
-| Snyk                               | SCA & SAST   |
-| SonarQube                          |              |
-| Veracode                           |              |
-| Generic 3rd Party AppSec Collector |              |
-
-[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Onboard-Data-Sources)
-
-## Code-to-Cloud
-
-### Supported Integrations
+#### Supported Integrations
 
 | Component  | Supported Provider / Build Tool                                 |
 |------------|-----------------------------------------------------------------|
@@ -78,9 +73,9 @@ ASPM is included in the **Cloud Posture Management** license.
 
 [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Code-to-Cloud)
 
-### Troubleshooting
+#### Troubleshooting
 
-#### Incomplete Lineage
+##### Incomplete Lineage
 
 | Issue                                        | Description                                                                                                                                                               |
 |----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -88,7 +83,7 @@ ASPM is included in the **Cloud Posture Management** license.
 | Missing Pipeline Integrations (Repositories) | If pipeline integrations are missing, the link between code and build artifacts breaks.                                                                                   |
 | Inactive Pipeline                            | Lineage is generated during pipeline runs. If a pipeline is integrated but has not run, trigger a build to generate the necessary artifacts and establish the connection. |
 
-#### Required Integrations by Deployment Type
+##### Required Integrations by Deployment Type
 
 | Deployment Type                                  | Required Integration                           | Purpose                                                  |
 |--------------------------------------------------|------------------------------------------------|----------------------------------------------------------|
@@ -97,7 +92,7 @@ ASPM is included in the **Cloud Posture Management** license.
 | Containers                                       | Container registry (Docker Hub, ECR, GCR, ACR) | Shows built images and where they were deployed          |
 | Cloud resources                                  | AWS / GCP / Azure cloud connectors             | Discovers runtime resources (VMs, containers, databases) |
 
-#### Full Code-to-Cloud Connection Requirements
+##### Full Code-to-Cloud Connection Requirements
 
 All of the following are needed for complete lineage:
 
@@ -112,7 +107,7 @@ VCS Repository
 
 To verify coverage, go to **ASPM Command Center → Coverage** and check for gaps.
 
-## Applications
+### Applications
 
 Applications are holistic entities that span the full application lifecycle from source code to cloud infrastructure. Each application is a logical, dynamic entity that groups:
 
@@ -122,25 +117,62 @@ Applications are holistic entities that span the full application lifecycle from
 - Cloud infrastructure resources
 - Runtime workloads
 
-### Business Applications
+#### Business Applications
 
 Business Applications are a specific type of Application that adds business context to grouped assets. They allow you to define, group, and maintain assets with unified business meaning, correlate security risks across the development lifecycle, and prioritize security issues based on business impact.
 
-### Creation Methods
+#### Creation Methods
 
-| Method              | How It Works                                                                                                                          | Automation | Best For                                     |
-|---------------------|---------------------------------------------------------------------------------------------------------------------------------------|------------|----------------------------------------------|
-| VCS Criteria        | Dynamically groups assets based on VCS hierarchy (Organization, Project, Repository). New matching repos are onboarded automatically. | High       | Multiple apps, structured repos              |
-| Cloud Tag Criteria  | Dynamically groups assets based on cloud tags (AWS, GCP, Azure, OCI). Maps infrastructure tags to application metadata fields.        | High       | Cloud environments, Code-to-Cloud visibility |
-| Application Builder | Manual creation starting from a code or cloud asset. Cortex Cloud suggests related assets automatically.                              | Low        | Specific apps, granular control              |
-| Public API          | Programmatic definition via API.                                                                                                      | High       | IaC, CI/CD pipelines, DevOps automation      |
+| Method              | How It Works                                                                                                                          | Automation | Best For                                     | Link |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------|------------|-----------------------------------------------|------|
+| Code (VCS-based) Criteria        | Dynamically groups assets based on VCS hierarchy (Organization, Project, Repository). New matching repos are onboarded automatically. | High       | Multiple apps, structured repos              | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Define-applications-by-Code-Criteria) |
+| Cloud (Tag-based) Criteria  | Dynamically groups assets based on cloud tags (AWS, GCP, Azure, OCI). Maps infrastructure tags to application metadata fields.        | High       | Cloud environments, Code-to-Cloud visibility | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Define-applications-by-cloud-tag-based-Criteria) |
+| Application Builder | Manual creation starting from a code or cloud asset. Cortex Cloud suggests related assets automatically.                              | Low        | Specific apps, granular control              | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/How-to-manually-build-an-application) |
+| Public API          | Programmatic definition via API.                                                                                                      | High       | IaC, CI/CD pipelines, DevOps automation      | [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Manage-criteria-via-the-public-API) |
 
-### When to Use Each Method
+#### When to Use Each Method
 
 | Use Case                                         | Recommended Method  |
 |--------------------------------------------------|---------------------|
-| Multiple apps, new repos onboarded automatically | VCS Criteria        |
-| Infrastructure organized by cloud tags           | Cloud Tag Criteria  |
-| Need strong Code-to-Cloud visibility             | Cloud Tag Criteria  |
+| Multiple apps, new repos onboarded automatically | Code (VCS-based) Criteria        |
+| Infrastructure organized by cloud tags           | Cloud (Tag-based) Criteria  |
+| Need strong Code-to-Cloud visibility             | Cloud (Tag-based) Criteria  |
 | Few specific apps with fine-grained control      | Application Builder |
 | Infrastructure-as-Code or CI/CD integration      | Public API          |
+
+### AppSec Policies
+
+| Policy Type                       | Description                                                                                                                                                                                                              | Finding Types | Scope | Triggers |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|-------|----------|
+| Code Scanners                      | Scans code for security issues throughout the development lifecycle. Covers code scanning (SAST, SCA (CVE vulnerabilities, license, package operational risk), IaC, Secrets) and image scanning (vulnerabilities, malware) across PR, periodic, and CI-triggered scans | [Vulnerabilities](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Reference-E-Grace-period-logic-and-configuration), Secrets, IaC Misconfigurations, Code Weaknesses (SAST), License Issues, Operational Risks, Malware | Code repositories and image registries | PR scan, CI scan, Periodic scan (code findings); CI Image scan, Image Registry scan (image findings) |
+| CI/CD Configuration Scanners       | Scans CI/CD and Version Control System (VCS) environments for insecure configurations. Restricts finding types to CI/CD Risks only and triggers to Periodic scan only                                                 | CI/CD Risks | CI/CD pipeline configurations | Periodic scan only |
+| Drift Detection Scanner            | Scans cloud environments to detect configuration drift between deployed resources and their IaC definitions. Restricts finding types to IaC Drift only and triggers to Periodic scan only                             | IaC Drift | Cloud assets and their associated IaC definitions | Periodic scan only |
+
+[Reference A: Finding type details](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Reference-A-Finding-type-details)
+
+[Reference D: Trigger and actions mapping](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Reference-D-Trigger-and-actions-mapping)
+
+[Reference G: Finding type to trigger mapping](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Reference-G-Finding-type-to-trigger-mapping)
+
+[Reference H: Action availability by trigger](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Reference-H-Action-availability-by-trigger)
+
+### AppSec Rules
+
+You can create custom rules for:
+
+- Secrets scans
+- IaC scans. Supported frameworks include Terraform, TFPlan (with automatic application of Terraform custom rules), CloudFormation, Kubernetes, Bicep, Helm, Kustomize, Helm and ARM. These scans also apply to serverless deployments
+
+Rules are configured via a [YAML file](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Configure-YAML-file-properties).
+
+## Supply Chain Security
+
+Focuses on securing your continuous integration and continuous delivery pipelines, ensuring the integrity and security of your automated build and deployment processes.
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/BNCvOg6pEdBp~axnn92pBQ/drZaJdylPd3g6d2wfDJPBA)
+
+## Code Security
+
+Identifies and helps mitigate security issues directly within your source code, including vulnerabilities in Infrastructure-as-Code (IaC) and open-source components, from the earliest stages of development.
+
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/BNCvOg6pEdBp~axnn92pBQ/TJUUzTRnShyUH~OazRZTNA)

@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add Cortex Cloud CSPM">
+    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add vulnerability management">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/supply-chain.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +126,8 @@
       <workItem from="1780921701595" duration="2319000" />
       <workItem from="1782747998685" duration="283000" />
       <workItem from="1782805798446" duration="1590000" />
-      <workItem from="1782831221463" duration="3455000" />
+      <workItem from="1782831221463" duration="5576000" />
+      <workItem from="1782899295412" duration="9136000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />
@@ -195,7 +201,23 @@
       <option name="project" value="LOCAL" />
       <updated>1782831980697</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add Cortex Cloud CSPM Cloud Security">
+      <option name="closed" value="true" />
+      <created>1782834693840</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1782834693840</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add vulnerability management">
+      <option name="closed" value="true" />
+      <created>1782836794514</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1782836794514</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +232,8 @@
     <MESSAGE value="Add ASPM" />
     <MESSAGE value="Add Code to Cloud" />
     <MESSAGE value="Add Cortex Cloud CSPM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Cortex Cloud CSPM" />
+    <MESSAGE value="Add Cortex Cloud CSPM Cloud Security" />
+    <MESSAGE value="Add vulnerability management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add vulnerability management" />
   </component>
 </project>
