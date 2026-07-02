@@ -108,24 +108,24 @@ nav:
           - DNS: unix/networking/dns.md
   - Cortex Cloud:
       - Overview: cortexcloud/cortexcloud.md
-      - Cloud Security Posture Management: cortexcloud/cspm.md
-      - Application Security Posture Management: cortexcloud/aspm.md
-      - Endpoint Protection (XDR): cortexcloud/endpoint-protection.md
+      - Cloud Posture Security:
+          - Cloud Security Posture Management: cortexcloud/cloud-posture/cspm.md
+          - Application Security Posture Management: cortexcloud/cloud-posture/aspm.md
+          - CIEM (Deprecated): cortexcloud/cloud-posture/ciem.md
+          - DSPM (Deprecated): cortexcloud/cloud-posture/dspm.md
+          - AI-SPM (Deprecated): cortexcloud/cloud-posture/ai-spm.md
+          - Cloud Attack Surface Management (ASM) (Deprecated): cortexcloud/cloud-posture/asm.md
+      - Cloud Runtime Security:
+          - Endpoint Protection (XDR): cortexcloud/cloud-runtime/endpoint-protection.md
+          - Cloud Detection and Response (CDR) (Deprecated): cortexcloud/cloud-runtime/cdr.md
+          - Container & Kubernetes Security (Deprecated): cortexcloud/cloud-runtime/container-kubernetes.md
+          - Cloud Workload Protection (CWP) (Deprecated): cortexcloud/cloud-runtime/cwp.md
+          - API Security (Deprecated): cortexcloud/cloud-runtime/api-security.md
+          - Serverless Security (Deprecated): cortexcloud/cloud-runtime/serverless.md
       - Onboarding:
           - GCP: cortexcloud/onboarding/gcp.md
           - GitHub: cortexcloud/onboarding/github.md
       - License: cortexcloud/license.md
-      - Cloud Posture Security:
-          - CIEM: cortexcloud/cloud-posture/ciem.md
-          - DSPM: cortexcloud/cloud-posture/dspm.md
-          - AI-SPM: cortexcloud/cloud-posture/ai-spm.md
-          - Cloud Attack Surface Management (ASM): cortexcloud/cloud-posture/asm.md
-      - Cloud Runtime Security:
-          - Cloud Detection and Response (CDR): cortexcloud/cloud-runtime/cdr.md
-          - Container & Kubernetes Security: cortexcloud/cloud-runtime/container-kubernetes.md
-          - Cloud Workload Protection (CWP): cortexcloud/cloud-runtime/cwp.md
-          - API Security: cortexcloud/cloud-runtime/api-security.md
-          - Serverless Security: cortexcloud/cloud-runtime/serverless.md
       - Security Operations:
           - Cortex XSIAM: cortexcloud/security-operations/xsiam.md
           - Cortex XSOAR: cortexcloud/security-operations/xsoar.md

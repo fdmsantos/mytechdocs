@@ -51,7 +51,7 @@ Provides a consolidated view of application risks and vulnerabilities across you
 
 ASPM does not execute scans. Detection and finding generation belong to Code Security (native scanners) and the Supply Chain Security pillar (VCS repository and CI/CD pipeline analysis). ASPM evaluates the findings against unified policies and orchestrates the resulting issues through to remediation.
 
-![ASPM Workflow](images/aspm-workflow.png){ loading=lazy }
+![ASPM Workflow](../images/aspm-workflow.png){ loading=lazy }
 
 [Documentation](https://docs-cortex.paloaltonetworks.com/r/BNCvOg6pEdBp~axnn92pBQ/Bw25CrPQtJJBsL9se8pEhQ)
 

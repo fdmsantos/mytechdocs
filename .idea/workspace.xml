@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Finalize Cortex Cloud Code Security">
-      <change afterPath="$PROJECT_DIR$/docs/cortexcloud/identity-security.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/security-operations/xdr.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/endpoint-protection.md" afterDir="false" />
+    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Finalize Cortex Cloud Endpoint Security">
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/aspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/aspm.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/endpoint-protection.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-runtime/endpoint-protection.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +127,7 @@
       <workItem from="1782831221463" duration="5576000" />
       <workItem from="1782899295412" duration="13919000" />
       <workItem from="1782930759163" duration="2340000" />
-      <workItem from="1782975952178" duration="7181000" />
+      <workItem from="1782975952178" duration="7512000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />
@@ -258,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782917088227</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Finalize Cortex Cloud Endpoint Security">
+      <option name="closed" value="true" />
+      <created>1783003477676</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1783003477676</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +286,7 @@
     <MESSAGE value="Add .gitignore" />
     <MESSAGE value="Finalize Cortex Cloud Supply Chain section" />
     <MESSAGE value="Finalize Cortex Cloud Code Security" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalize Cortex Cloud Code Security" />
+    <MESSAGE value="Finalize Cortex Cloud Endpoint Security" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalize Cortex Cloud Endpoint Security" />
   </component>
 </project>
