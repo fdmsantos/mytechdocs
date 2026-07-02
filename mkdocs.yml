@@ -110,6 +110,7 @@ nav:
       - Overview: cortexcloud/cortexcloud.md
       - Cloud Security Posture Management: cortexcloud/cspm.md
       - Application Security Posture Management: cortexcloud/aspm.md
+      - Endpoint Protection (XDR): cortexcloud/endpoint-protection.md
       - Onboarding:
           - GCP: cortexcloud/onboarding/gcp.md
           - GitHub: cortexcloud/onboarding/github.md
@@ -127,7 +128,6 @@ nav:
           - Serverless Security: cortexcloud/cloud-runtime/serverless.md
       - Security Operations:
           - Cortex XSIAM: cortexcloud/security-operations/xsiam.md
-          - Cortex XDR: cortexcloud/security-operations/xdr.md
           - Cortex XSOAR: cortexcloud/security-operations/xsoar.md
           - Cortex Xpanse: cortexcloud/security-operations/xpanse.md
           - Unit 42 MDR: cortexcloud/security-operations/unit42.md

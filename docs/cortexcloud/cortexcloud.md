@@ -40,19 +40,62 @@ Tracks which topics from [Cortex Cloud Posture Management — Key features](http
 - [ ] Graph Search
 - [ ] API specification inventory
 
+Tracks which topics from [Cortex Cloud Runtime Security — Key features](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Key-features) TOC have already been reviewed.
+
+- [ ] Get started with Cortex Cloud
+- [ ] Onboard and configure Cortex Cloud
+- [x] Endpoint security
+- [ ] Threat management
+- [ ] Web and API Security (WAAS)
+- [ ] Review inventory and explore your cloud environment
+- [ ] Review and prioritize posture issues
+- [ ] Agentic Assistant chat
+- [ ] Review and report your security posture and progress
+- [ ] Discovery Engine
+- [ ] Cortex Cloud AI Security
+- [ ] Cortex Cloud Application Security
+- [ ] Cloud ASM
+- [ ] Network exposure detection
+- [ ] Cortex Cloud Data Classification
+- [ ] Cortex Cloud Data Security
+- [ ] Cortex Cloud Identity Security
+- [ ] Vulnerability management
+- [ ] Cloud Security Rules and Policies
+- [ ] Cloud Workload Policies and Rules
+- [ ] Base Images Rule
+- [ ] Monitor and track compliance adherence
+- [ ] Data management
+- [ ] Cortex Cloud Data Sources
+- [ ] Marketplace
+- [ ] Serverless function posture security
+- [ ] Serverless function runtime security
+- [ ] Cortex CLI
+- [ ] Cortex Cloud XQL
+- [ ] Graph Search
+
 ## Application Menu Tracking
 
 Tracks which menus/submenus of the Cortex Cloud application have already been reviewed.
 
-### Posture Management → Rules & Policies
+### Posture Management
 
-- [ ] Attack Surface Policies
-- [ ] Application Security Policies
+- [x] Vulnerability Management
+- [x] Compliance
+- [ ] Rules And Policies - Attack Surface Policies
+- [x] Rules And Policies - Application Security Policies
+- [x] Rules And Policies - Cloud Workload, Cloud Security, Vulnerability Management
+- [x] Rules And Policies - Rules
+
+### Inventory
+
+- [x] Endpoints
 
 ### Configuration (Settings)
 
 - [x] Application Security
-
+- [x] General → Agent Configuration
+- [x] Issue & Exceptions
+- 
 ## Authentication
 
 ### SSO

@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Finalize Cortex Cloud Code Security">
-      <change afterPath="$PROJECT_DIR$/docs/cortexcloud/aspm.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/aspm.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/cicd-posture-management.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/iac-security.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/images/aspm-workflow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/open-partner-ecosystem.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/application-security/secrets-security.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/cortexcloud/identity-security.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/security-operations/xdr.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/endpoint-protection.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,6 +127,8 @@
       <workItem from="1782805798446" duration="1590000" />
       <workItem from="1782831221463" duration="5576000" />
       <workItem from="1782899295412" duration="13919000" />
+      <workItem from="1782930759163" duration="2340000" />
+      <workItem from="1782975952178" duration="7181000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />
