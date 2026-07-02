@@ -45,7 +45,7 @@ Tracks which topics from [Cortex Cloud Runtime Security — Key features](https:
 - [ ] Get started with Cortex Cloud
 - [ ] Onboard and configure Cortex Cloud
 - [x] Endpoint security
-- [ ] Threat management
+- [x] Threat management
 - [ ] Web and API Security (WAAS)
 - [ ] Review inventory and explore your cloud environment
 - [ ] Review and prioritize posture issues
@@ -77,6 +77,10 @@ Tracks which topics from [Cortex Cloud Runtime Security — Key features](https:
 
 Tracks which menus/submenus of the Cortex Cloud application have already been reviewed.
 
+### Threat Management
+
+- [x] Everything
+
 ### Posture Management
 
 - [x] Vulnerability Management
@@ -95,7 +99,8 @@ Tracks which menus/submenus of the Cortex Cloud application have already been re
 - [x] Application Security
 - [x] General → Agent Configuration
 - [x] Issue & Exceptions
-- 
+- [x] Cortex Analytics
+
 ## Authentication
 
 ### SSO

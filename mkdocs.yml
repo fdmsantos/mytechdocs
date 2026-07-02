@@ -117,6 +117,7 @@ nav:
           - Cloud Attack Surface Management (ASM) (Deprecated): cortexcloud/cloud-posture/asm.md
       - Cloud Runtime Security:
           - Endpoint Protection (XDR): cortexcloud/cloud-runtime/endpoint-protection.md
+          - Threat Management: cortexcloud/cloud-runtime/threat-management.md
           - Cloud Detection and Response (CDR) (Deprecated): cortexcloud/cloud-runtime/cdr.md
           - Container & Kubernetes Security (Deprecated): cortexcloud/cloud-runtime/container-kubernetes.md
           - Cloud Workload Protection (CWP) (Deprecated): cortexcloud/cloud-runtime/cwp.md
