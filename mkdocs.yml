@@ -111,6 +111,7 @@ nav:
       - Cloud Posture Security:
           - Cloud Security Posture Management: cortexcloud/cloud-posture/cspm.md
           - Application Security Posture Management: cortexcloud/cloud-posture/aspm.md
+          - Serverless Function Posture Security: cortexcloud/cloud-posture/serverless-posture.md
           - CIEM (Deprecated): cortexcloud/cloud-posture/ciem.md
           - DSPM (Deprecated): cortexcloud/cloud-posture/dspm.md
           - AI-SPM (Deprecated): cortexcloud/cloud-posture/ai-spm.md
@@ -118,6 +119,7 @@ nav:
       - Cloud Runtime Security:
           - Endpoint Protection (XDR): cortexcloud/cloud-runtime/endpoint-protection.md
           - Threat Management: cortexcloud/cloud-runtime/threat-management.md
+          - Serverless Function Runtime Security: cortexcloud/cloud-runtime/serverless-runtime.md
           - Cloud Detection and Response (CDR) (Deprecated): cortexcloud/cloud-runtime/cdr.md
           - Container & Kubernetes Security (Deprecated): cortexcloud/cloud-runtime/container-kubernetes.md
           - Cloud Workload Protection (CWP) (Deprecated): cortexcloud/cloud-runtime/cwp.md

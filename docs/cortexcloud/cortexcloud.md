@@ -31,7 +31,7 @@ Tracks which topics from [Cortex Cloud Posture Management — Key features](http
 - [x] Cloud Security Rules and Policies
 - [x] Cloud Workload Policies and Rules
 - [x] Base Images Rule
-- [ ] Serverless function posture security
+- [X] Serverless function posture security
 - [ ] Data management
 - [ ] Cortex Cloud Data Sources
 - [ ] Marketplace
@@ -59,16 +59,10 @@ Tracks which topics from [Cortex Cloud Runtime Security — Key features](https:
 - [ ] Cortex Cloud Data Classification
 - [ ] Cortex Cloud Data Security
 - [ ] Cortex Cloud Identity Security
-- [ ] Vulnerability management
-- [ ] Cloud Security Rules and Policies
-- [ ] Cloud Workload Policies and Rules
-- [ ] Base Images Rule
-- [ ] Monitor and track compliance adherence
 - [ ] Data management
 - [ ] Cortex Cloud Data Sources
 - [ ] Marketplace
-- [ ] Serverless function posture security
-- [ ] Serverless function runtime security
+- [X] Serverless function runtime security
 - [ ] Cortex CLI
 - [ ] Cortex Cloud XQL
 - [ ] Graph Search
