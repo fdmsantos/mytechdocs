@@ -22,8 +22,8 @@ Tracks which topics from [Cortex Cloud Posture Management — Key features](http
 - [x] Monitor and track compliance adherence
 - [ ] Cortex Cloud AI Security
 - [x] Cortex Cloud Application Security
-- [ ] Cortex Cloud Data Classification
-- [ ] Cortex Cloud Data Security
+- [x] Cortex Cloud Data Classification
+- [X] Cortex Cloud Data Security
 - [ ] Cortex Cloud Identity Security
 - [ ] Cloud ASM
 - [ ] Network exposure detection
@@ -56,8 +56,6 @@ Tracks which topics from [Cortex Cloud Runtime Security — Key features](https:
 - [ ] Cortex Cloud Application Security
 - [ ] Cloud ASM
 - [ ] Network exposure detection
-- [ ] Cortex Cloud Data Classification
-- [ ] Cortex Cloud Data Security
 - [ ] Cortex Cloud Identity Security
 - [ ] Data management
 - [ ] Cortex Cloud Data Sources
@@ -94,6 +92,11 @@ Tracks which menus/submenus of the Cortex Cloud application have already been re
 - [x] General → Agent Configuration
 - [x] Issue & Exceptions
 - [x] Cortex Analytics
+- [x] Data Classification
+
+### Modules
+
+- [x] Data Security
 
 ## Authentication
 
