@@ -102,6 +102,8 @@ A special type of exception where you don't define the criteria yourself — ins
 
 ## Cortex XDR Agent
 
+[Cortex XDR Agent Administrator Guide](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/8.9/Cortex-XDR-Agent-Administrator-Guide/Introduction)
+
 !!! note "Critical Environment (CE)"
     After you install the Cortex XDR agent and the agent registers with Cortex Cloud, you can set endpoints to run with a Cortex XDR agent Critical Environment (CE) version.
 

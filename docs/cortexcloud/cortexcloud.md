@@ -24,7 +24,7 @@ Tracks which topics from [Cortex Cloud Posture Management — Key features](http
 - [x] Cortex Cloud Application Security
 - [x] Cortex Cloud Data Classification
 - [X] Cortex Cloud Data Security
-- [ ] Cortex Cloud Identity Security
+- [X] Cortex Cloud Identity Security
 - [X] Cloud ASM
 - [ ] Network exposure detection
 - [x] Vulnerability management
@@ -85,12 +85,17 @@ Tracks which menus/submenus of the Cortex Cloud application have already been re
 - [x] Issue & Exceptions
 - [x] Cortex Analytics
 - [x] Data Classification
+- [x] Attack Surface
 
 ### Modules
 
 - [x] Data Security
 - [x] AI Security
 - [X] Attack Surface
+- [X] Identity Security
+- [x] Application Security
+- [x] Vulnerability Management
+- [x] Kubernetes Security
 
 ## Authentication
 
