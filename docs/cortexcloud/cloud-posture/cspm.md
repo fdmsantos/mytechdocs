@@ -14,7 +14,7 @@ Identifies, prioritizes, and remediates vulnerabilities across endpoints, code, 
 - **Issues** — Created when a finding matches a vulnerability policy. Each issue includes priority, assignee, status, asset context, and exploitability details.
 
 !!! note
-    For vulnerabilities detected via application security scans, refer to [Cortex Cloud Application Security](../application-security/aspm.md).
+    For vulnerabilities detected via application security scans, refer to [Cortex Cloud Application Security](aspm.md).
 
 ### Vulnerability Intelligence
 

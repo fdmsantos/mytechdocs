@@ -51,6 +51,9 @@ plugins:
   - glightbox
   - search
 
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/markmap-autoloader@0.17
+
 nav:
   - Home: index.md
   - Kubernetes:
@@ -117,6 +120,7 @@ nav:
           - CIEM: cortexcloud/cloud-posture/ciem.md
           - ASM: cortexcloud/cloud-posture/asm.md
           - KSPM: cortexcloud/cloud-posture/kspm.md
+          - Network Exposure Detection: cortexcloud/cloud-posture/network-exposure.md
       - Cloud Runtime Security:
           - Endpoint Protection (XDR): cortexcloud/cloud-runtime/endpoint-protection.md
           - Threat Management: cortexcloud/cloud-runtime/threat-management.md
@@ -124,7 +128,6 @@ nav:
           - Cloud Detection and Response (CDR) (Deprecated): cortexcloud/cloud-runtime/cdr.md
           - Cloud Workload Protection (CWP) (Deprecated): cortexcloud/cloud-runtime/cwp.md
           - API Security (Deprecated): cortexcloud/cloud-runtime/api-security.md
-          - Serverless Security (Deprecated): cortexcloud/cloud-runtime/serverless.md
       - Onboarding:
           - GCP: cortexcloud/onboarding/gcp.md
           - GitHub: cortexcloud/onboarding/github.md
