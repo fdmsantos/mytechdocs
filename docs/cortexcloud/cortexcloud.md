@@ -20,7 +20,7 @@ Tracks which topics from [Cortex Cloud Posture Management — Key features](http
 - [ ] Agentic Assistant chat
 - [ ] Review and report your security posture and progress
 - [x] Monitor and track compliance adherence
-- [ ] Cortex Cloud AI Security
+- [X] Cortex Cloud AI Security
 - [x] Cortex Cloud Application Security
 - [x] Cortex Cloud Data Classification
 - [X] Cortex Cloud Data Security
@@ -52,11 +52,6 @@ Tracks which topics from [Cortex Cloud Runtime Security — Key features](https:
 - [ ] Agentic Assistant chat
 - [ ] Review and report your security posture and progress
 - [ ] Discovery Engine
-- [ ] Cortex Cloud AI Security
-- [ ] Cortex Cloud Application Security
-- [ ] Cloud ASM
-- [ ] Network exposure detection
-- [ ] Cortex Cloud Identity Security
 - [ ] Data management
 - [ ] Cortex Cloud Data Sources
 - [ ] Marketplace
@@ -97,6 +92,7 @@ Tracks which menus/submenus of the Cortex Cloud application have already been re
 ### Modules
 
 - [x] Data Security
+- [x] AI Security
 
 ## Authentication
 
