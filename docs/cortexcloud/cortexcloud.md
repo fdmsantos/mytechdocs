@@ -25,7 +25,7 @@ Tracks which topics from [Cortex Cloud Posture Management — Key features](http
 - [x] Cortex Cloud Data Classification
 - [X] Cortex Cloud Data Security
 - [ ] Cortex Cloud Identity Security
-- [ ] Cloud ASM
+- [X] Cloud ASM
 - [ ] Network exposure detection
 - [x] Vulnerability management
 - [x] Cloud Security Rules and Policies
@@ -72,10 +72,7 @@ Tracks which menus/submenus of the Cortex Cloud application have already been re
 
 - [x] Vulnerability Management
 - [x] Compliance
-- [ ] Rules And Policies - Attack Surface Policies
-- [x] Rules And Policies - Application Security Policies
-- [x] Rules And Policies - Cloud Workload, Cloud Security, Vulnerability Management
-- [x] Rules And Policies - Rules
+- [x] Rules And Policies
 
 ### Inventory
 
@@ -93,6 +90,7 @@ Tracks which menus/submenus of the Cortex Cloud application have already been re
 
 - [x] Data Security
 - [x] AI Security
+- [X] Attack Surface
 
 ## Authentication
 

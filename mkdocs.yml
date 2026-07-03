@@ -115,7 +115,7 @@ nav:
           - DSPM: cortexcloud/cloud-posture/dspm.md
           - AI-SPM: cortexcloud/cloud-posture/ai-spm.md
           - CIEM (Deprecated): cortexcloud/cloud-posture/ciem.md
-          - Cloud Attack Surface Management (ASM) (Deprecated): cortexcloud/cloud-posture/asm.md
+          - ASM: cortexcloud/cloud-posture/asm.md
       - Cloud Runtime Security:
           - Endpoint Protection (XDR): cortexcloud/cloud-runtime/endpoint-protection.md
           - Threat Management: cortexcloud/cloud-runtime/threat-management.md

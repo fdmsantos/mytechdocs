@@ -4,37 +4,23 @@
 
 ASM is included in the **Cloud Posture Management** license.
 
+[Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Cloud-ASM)
+
 ## Enable or Disable Cloud ASM
 
 [Official Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Enable-Cloud-ASM)
 
-1. Navigate to **Settings → Configurations → Attack Surface → Data Management**.
-2. Toggle the **Enable Attack Surface Data** switch on or off.
+1. Our scanning activity on the ranges below is CFAA-compliant. Mark our ranges as non-malicious in your system so that you stop getting alerts, or configure your firewall to drop traffic from our ranges ([Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Scanning-activity)).
+2. Navigate to **Settings → Configurations → Attack Surface → Data Management**.
+3. Toggle the **Enable Attack Surface Data** switch on or off.
 
-## External Surface Assets
+## Externally Inferred CVEs
 
-[Official Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/External-Surface-assets)
+CVEs are inferred by matching a service's reported version against the NVD, with three confidence levels:
 
-### Certificates
+| Confidence | Description |
+|------------|-------------|
+| High | Exact version match against the NVD. Cortex Cloud generates an issue for investigation (e.g., service reports Apache 2.4.49 and the CVE affects exactly 2.4.49). |
+| Medium | Partial version match with extra characters (e.g., Apache 2.4.49c vs. 2.4.49). Cortex Cloud creates a finding, not an issue, since confidence is lower and further investigation is required. |
+| No Match | The service version differs from the affected version (e.g., service runs Apache 2.4.50 but the CVE affects 2.4.49). |
 
-Tracks digital certificates used for encrypted communications (SSL/TLS, HTTPS, SSH, VPN). Collects issuer, public key, subject, SANs, and cryptographic health checks (self-signed, wildcard, expired, signature algorithm, key bits). Health checks appear as **Certificate Classifications** in asset details.
-
-### Domains
-
-Lists all domains attributed to your organization, including root domains and subdomains as separate entries. Wildcard DNS subdomains resolving to the same IP are grouped under one entry. Subdomains are collapsed under the parent if more than 1,000 are observed. Data is collected using active and passive global DNS scanning techniques.
-
-### Services
-
-Lists all internet-facing services (any device or software on a domain:port or IP:port pair responding over the public internet).
-
-Key fields:
-
-| Field                                       | Description                                                                                                                                                                                                                  |
-|---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Active Classifications**                  | Fingerprint-based identifiers of software, technologies, and behaviors (e.g., specific versions, configuration details, missing security headers).                                                                           |
-| **Business Units**                          | Designation to classify assets and identify owning organizations (useful for subsidiaries / M&A).                                                                                                                            |
-| **Discovery Type**                          | **Directly Discovered** — definitively associated with your organization (on-prem IP, your certificate, managed cloud resource). **Colocated with your Services** — running on the same IP as a directly-discovered service. |
-| **Externally Inferred CVEs**                | Identified by matching product name/version against the National Vulnerability Database. Requires additional investigation to confirm.                                                                                       |
-| **Externally Inferred Vulnerability Score** | Based on the highest CVSSv3 (or CVSSv2) score for inferred CVEs on the service.                                                                                                                                              |
-| **Is Active**                               | Whether the service is currently observed on the internet.                                                                                                                                                                   |
-| **Protocol**                                | Application-level protocol over which the service was validated.                                                                                                                                                             |
