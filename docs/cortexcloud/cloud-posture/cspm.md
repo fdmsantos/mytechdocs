@@ -293,7 +293,7 @@ Documentation: [Associate a custom control to a detection rule](https://docs-cor
 | Rule Type | OOTB rules | Custom rules |
 |---|---|---|
 | **Cloud workload rules** | N/A | When creating or editing custom cloud workload rules, you can associate custom compliance controls with them. |
-| **Cloud security rules** — Note: only `Config`, `Identity`, and `AI` rule types support this. | You can edit existing out-of-the-box cloud security rules and associate custom compliance controls with them. | When creating or editing custom cloud security rules, you can associate custom compliance controls with them. |
+| **Cloud security rules** — Note: only `Config`, `Data`, `Identity`, and `AI` rule types support this. | You can edit existing out-of-the-box cloud security rules and associate custom compliance controls with them. | When creating or editing custom cloud security rules, you can associate custom compliance controls with them. |
 
 ### Assessment Profile
 

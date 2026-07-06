@@ -142,6 +142,92 @@ Business Applications are a specific type of Application that adds business cont
 
 ### AppSec Policies
 
+```mermaid
+graph LR
+    AppSec[AppSec Policies]
+    CodeImageScanners["Type: Code & Image Scanners"]
+    CICDConfig["Type: CI/CD Configuration"]
+    DriftDetection["Type: Drift Detection Scanner"]
+
+    FTVulnerabilities["Finding Type: Vulnerabilities"]
+    FTSecrets["Finding Type: Secrets"]
+    FTIaCMisconfig["Finding Type: IaC Misconfigurations"]
+    FTCodeWeaknesses["Finding Type: Code Weaknesses (SAST)"]
+    FTLicense["Finding Type: License Issues"]
+    FTOperationalRisk["Finding Type: Operational Risks"]
+    FTMalware["Finding Type: Malware"]
+    FTCICDRisks["Finding Type: CI/CD Risks"]
+    FTIaCDrift["Finding Type: IaC Drift"]
+
+    StageCode["Stage: Code"]
+    StageBuild["Stage: Build"]
+    StageDeploy["Stage: Deploy"]
+    TriggerPR["Trigger: PR Scan<br/>N/A: Code Weaknesses (SAST), CI/CD Risks, IaC Drift"]
+    TriggerPeriodic["Trigger: Periodic Scan"]
+    TriggerCICodeScan["Trigger: CI Code Scan<br/>N/A: Malware"]
+    TriggerCIImageScan["Trigger: CI Image Scan<br/>N/A: IaC Misconfigurations, Licenses, Operational Risks"]
+    TriggerRegistryImageScan["Trigger: Registry Image Scan"]
+
+    ActionBlockPR["Action: Block PR"]
+    ActionPRComment["Action: PR Comment"]
+    ActionCreateIssue["Action: Create New Issue"]
+    ActionBlockCI["Action: Block CI"]
+    ActionReportCI["Action: Report CI"]
+
+    AppSec --> CodeImageScanners
+    AppSec --> CICDConfig
+    AppSec --> DriftDetection
+
+    CICDConfig --> FTCICDRisks
+
+    DriftDetection --> FTIaCDrift
+
+    CodeImageScanners --> FTVulnerabilities
+    CodeImageScanners --> FTSecrets
+    CodeImageScanners --> FTIaCMisconfig
+    CodeImageScanners --> FTCodeWeaknesses
+    CodeImageScanners --> FTLicense
+    CodeImageScanners --> FTOperationalRisk
+    CodeImageScanners --> FTMalware
+
+    FTVulnerabilities --> StageCode
+    FTSecrets --> StageCode
+    FTIaCMisconfig --> StageCode
+    FTCodeWeaknesses --> StageCode
+    FTLicense --> StageCode
+    FTOperationalRisk --> StageCode
+    FTCICDRisks --> StageCode
+    FTIaCDrift --> StageCode
+
+    FTVulnerabilities --> StageBuild
+    FTSecrets --> StageBuild
+    FTIaCMisconfig --> StageBuild
+    FTLicense --> StageBuild
+    FTOperationalRisk --> StageBuild
+    FTMalware --> StageBuild
+
+    FTVulnerabilities --> StageDeploy
+    FTMalware --> StageDeploy
+
+    StageCode --> TriggerPR
+    StageCode --> TriggerPeriodic
+    StageBuild --> TriggerCICodeScan
+    StageBuild --> TriggerCIImageScan
+    StageDeploy --> TriggerRegistryImageScan
+
+    TriggerPR --> ActionBlockPR
+    TriggerPR --> ActionPRComment
+    TriggerPR --> ActionCreateIssue
+    TriggerPeriodic --> ActionCreateIssue
+    TriggerCICodeScan --> ActionCreateIssue
+    TriggerCIImageScan --> ActionCreateIssue
+    TriggerRegistryImageScan --> ActionCreateIssue
+
+    TriggerCICodeScan --> ActionBlockCI
+    TriggerCICodeScan --> ActionReportCI
+    TriggerCIImageScan --> ActionBlockCI
+```
+
 | Policy Type                       | Description                                                                                                                                                                                                              | Finding Types | Scope | Triggers |
 |------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|-------|----------|
 | Code Scanners                      | Scans code for security issues throughout the development lifecycle. Covers code scanning (SAST, SCA (CVE vulnerabilities, license, package operational risk), IaC, Secrets) and image scanning (vulnerabilities, malware) across PR, periodic, and CI-triggered scans | [Vulnerabilities](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Reference-E-Grace-period-logic-and-configuration), Secrets, IaC Misconfigurations, Code Weaknesses (SAST), License Issues, Operational Risks, Malware | Code repositories and image registries | PR scan, CI scan, Periodic scan (code findings); CI Image scan, Image Registry scan (image findings) |
@@ -157,6 +243,44 @@ Business Applications are a specific type of Application that adds business cont
 [Reference H: Action availability by trigger](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Reference-H-Action-availability-by-trigger)
 
 ### AppSec Rules
+
+```mermaid
+graph LR
+    AppSecRules[AppSec Rules]
+    ScannerIaC["Scanner: IaC Security"]
+    ScannerSecrets["Scanner: Secrets Security"]
+    FrameworkTerraform["Framework: Terraform"]
+    FrameworkCloudFormation["Framework: CloudFormation"]
+    FrameworkKubernetes["Framework: Kubernetes"]
+    FrameworkBicep["Framework: Bicep"]
+    FrameworkARM["Framework: ARM"]
+    CategoryAPIKeys["Category: API Keys"]
+    CategoryDatabaseCredentials["Category: Database Credentials"]
+    CategoryEncryptionKeys["Category: Encryption Keys"]
+    CategoryCSPKeys["Category: Cloud Service Provider Keys"]
+    CategorySSHKeys["Category: SSH Keys"]
+    CategoryEnvVars["Category: Environment Variables"]
+    CategorySensitiveTokens["Category: Sensitive Tokens"]
+    CategoryThirdPartyServices["Category: Third Party Services"]
+
+    AppSecRules --> ScannerIaC
+    AppSecRules --> ScannerSecrets
+
+    ScannerIaC --> FrameworkTerraform
+    ScannerIaC --> FrameworkCloudFormation
+    ScannerIaC --> FrameworkKubernetes
+    ScannerIaC --> FrameworkBicep
+    ScannerIaC --> FrameworkARM
+
+    ScannerSecrets --> CategoryAPIKeys
+    ScannerSecrets --> CategoryDatabaseCredentials
+    ScannerSecrets --> CategoryEncryptionKeys
+    ScannerSecrets --> CategoryCSPKeys
+    ScannerSecrets --> CategorySSHKeys
+    ScannerSecrets --> CategoryEnvVars
+    ScannerSecrets --> CategorySensitiveTokens
+    ScannerSecrets --> CategoryThirdPartyServices
+```
 
 You can create custom rules for:
 
@@ -298,11 +422,13 @@ Identifies discrepancies between the desired state defined in your IaC templates
 
 Cortex Cloud aggregates scan results across the SDLC from three scan types into dedicated inventory views, surfacing scan health, issue severity breakdowns, and findings by security category.
 
-| Scan Type              | Description |
-|--------------------------|-------------|
-| Branch Periodic Scan     | Scans code branches on a schedule to identify vulnerabilities early in development |
-| Pull Request Scan        | Scans code changes within pull requests to prevent the introduction of new vulnerabilities |
-| CI Scan                  | Detects exposed secrets, misconfigurations, package vulnerabilities, and license non-compliance in your CI pipelines |
+| Scan Type              | Description | Actions |
+|--------------------------|-------------|---------|
+| PR Scan                  | Security scans triggered when a pull request or merge request is created or updated in your version control system. | Block PR, PR Comment, Create New Issue |
+| Periodic Scan            | Automated security scanning that runs every 12 hours or on manual request, according to the repository scan configuration. | Create New Issue |
+| CI Code Scan             | Security scans triggered during the CI pipeline to evaluate source code. | Block CI, Report CI, Create New Issue |
+| CI Image Scan            | Security scans triggered during the CI pipeline after a container image is built from code. | Block CI, Create New Issue |
+| Registry Image Scan      | Security scanning of container images in the registry. | Create New Issue |
 
 [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Application-Security-scans-management)
 

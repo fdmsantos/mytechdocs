@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add KSPM">
+    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add Network Exposure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/aspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/aspm.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-posture/cspm.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cortexcloud/identity-security.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +130,8 @@
       <workItem from="1782930759163" duration="2340000" />
       <workItem from="1782975952178" duration="12987000" />
       <workItem from="1783067518477" duration="12556000" />
-      <workItem from="1783113649932" duration="2452000" />
+      <workItem from="1783113649932" duration="3693000" />
+      <workItem from="1783327532555" duration="13766000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />
@@ -316,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783092094222</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Add Network Exposure">
+      <option name="closed" value="true" />
+      <created>1783118081802</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1783118081802</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +353,7 @@
     <MESSAGE value="Add AI-SPM" />
     <MESSAGE value="Add ASM" />
     <MESSAGE value="Add KSPM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add KSPM" />
+    <MESSAGE value="Add Network Exposure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Network Exposure" />
   </component>
 </project>
