@@ -4,6 +4,22 @@
 
 [Documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Serverless-function-posture-security)
 
+```mermaid
+graph LR
+    Root[Serverless Function Posture Security Policies]
+    CSP[Cloud Security Policies]
+    AssetTypes["Asset Types: Azure Cloud Function, Google Cloud Function, Lambda Function"]
+    AttackPath["Rule Type: Attack Path"]
+    Config["Rule Type: Config"]
+    NetworkExposure["Rule Type: Network Exposure"]
+
+    Root --> CSP
+    CSP --> AssetTypes
+    AssetTypes --> AttackPath
+    AssetTypes --> Config
+    AssetTypes --> NetworkExposure
+```
+
 ## Supported Platforms
 
 **Supported architecture**: x86_64

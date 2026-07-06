@@ -36,6 +36,18 @@ If the official CVSS score doesn't reflect the real risk in your environment, yo
 
 ### Vulnerability Policies
 
+```mermaid
+graph LR
+    VP[Vulnerability Policies]
+    IssueCreation["Action: Issue Creation"]
+    Prevention["Action: Prevention"]
+    K8sVP["Connector: Kubernetes"]
+
+    VP --> IssueCreation
+    VP --> Prevention
+    Prevention --> K8sVP
+```
+
 **More info:** [Vulnerability policies](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Vulnerability-policies)
 
 A vulnerability policy defines what action to take on findings that match specific criteria. Cortex Cloud includes predefined policies based on CVSS severity, EPSS severity, and Attack Surface Testing results. Custom policies can be created to match your organization's specific needs (e.g., only create issues for CVSS ≥ 9 on production servers, or block images with EPSS > 90% from being deployed to Kubernetes).
@@ -82,6 +94,32 @@ Prevention policies support a **block grace period** — a buffer of X days afte
 Documentation: [Cloud Security Rules and Policies](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Cloud-Security-Rules-and-Policies)
 
 Cloud security rules and policies define and manage security guardrails consistently across AWS, Azure, GCP, and other cloud providers. They detect specific conditions in target environments, generating findings and issues for misconfigurations and threats.
+
+```mermaid
+graph LR
+    CSP[Cloud Security Policies]
+    AttackPath["Rule Type: Attack Path"]
+    Configuration["Rule Type: Configuration"]
+    Data["Rule Type: Data"]
+    Identity["Rule Type: Identity"]
+    NetworkExposure["Rule Type: Network Exposure"]
+    AI["Rule Type: AI"]
+    CreateCSP["Action: Create Issue"]
+
+    CSP --> AttackPath
+    CSP --> Configuration
+    CSP --> Data
+    CSP --> Identity
+    CSP --> NetworkExposure
+    CSP --> AI
+
+    AttackPath --> CreateCSP
+    Configuration --> CreateCSP
+    Data --> CreateCSP
+    Identity --> CreateCSP
+    NetworkExposure --> CreateCSP
+    AI --> CreateCSP
+```
 
 ### Rules
 
@@ -158,6 +196,52 @@ Rules alone generate findings across all assets. When associated with a policy, 
 Documentation: [Cloud Workload Policies and Rules](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Cloud-Workload-Policies-and-Rules)
 
 Cloud Workload Policies prevent and manage security violations in cloud runtime instances by applying detection logic to specific asset groups at the desired SDLC stage, and defining the action to take when conditions are met.
+
+```mermaid
+graph LR
+    CWP[Cloud Workload Policies]
+    Misc["Type: Misconfiguration"]
+    Malware["Type: Malware"]
+    Secret["Type: Secret"]
+    Trusted["Type: Trusted Image"]
+    Rules[Cloud Workload Rules]
+    ScannerDisk["Rule Scanner: Agentless Disk Scan"]
+    DiskWindows["OS: Windows"]
+    DiskLinux["OS: Linux"]
+    ScannerK8s["Rule Scanner: Kubernetes Connector"]
+    K8sResources["Kubernetes Resources: Namespaces, ReplicaSets, Deployments"]
+    ScannerXDR["Rule Scanner: XDR Agent"]
+    XDRWindows["OS: Windows"]
+    XDRLinux["OS: Linux"]
+    Runtime[Stage: Runtime]
+    Prevent["Action: Prevent and Create Issue"]
+    Create["Action: Create Issue"]
+    K8s["Connector: Kubernetes"]
+
+    CWP --> Misc
+    CWP --> Malware
+    CWP --> Secret
+    CWP --> Trusted
+
+    Misc --> Rules
+    Rules --> ScannerDisk
+    Rules --> ScannerK8s
+    Rules --> ScannerXDR
+
+    ScannerDisk --> DiskWindows --> Runtime
+    ScannerDisk --> DiskLinux --> Runtime
+    ScannerK8s --> K8sResources --> Runtime
+    ScannerXDR --> XDRWindows --> Runtime
+    ScannerXDR --> XDRLinux --> Runtime
+
+    Malware --> Runtime
+    Secret --> Runtime
+    Trusted --> Runtime
+
+    Runtime --> Prevent
+    Runtime --> Create
+    Prevent --> K8s
+```
 
 ### Policies
 
@@ -279,6 +363,31 @@ Rules can be created from **Posture Management → Rules & Policies → Rules �
 Measures how well your cloud assets adhere to industry, regulatory, and organizational standards, by continuously assessing assets against the requirements defined in a chosen compliance standard.
 
 **Standards** are guidelines organizations follow to comply with industry best practices, regulations, and internal policies. A standard is made up of **controls** — measures that ensure compliance and mitigate risk, and can be grouped into categories (e.g. RBAC, Pod security). Each control is in turn built from one or more **rules** — the specific checks that run on an asset. Both catalogs include built-in industry standards/controls as well as custom organizational ones.
+
+```mermaid
+graph LR
+    Compliance[Compliance]
+    Standards[Standards]
+    AssetGroup["Asset Group"]
+    AssessmentProfile["Assessment Profile"]
+    Controls[Controls]
+    CWRulesC[Cloud Workload Rules]
+    ConfigRuleC["Cloud Security: Config Rule"]
+    DataRuleC["Cloud Security: Data Rule"]
+    IdentityRuleC["Cloud Security: Identity Rule"]
+    AIRuleC["Cloud Security: AI Rule"]
+
+    Compliance --> Standards --> Controls
+    Controls --> CWRulesC
+    Controls --> ConfigRuleC
+    Controls --> DataRuleC
+    Controls --> IdentityRuleC
+    Controls --> AIRuleC
+
+    Standards ~~~ AssetGroup
+    Standards --> AssessmentProfile
+    AssetGroup --> AssessmentProfile
+```
 
 - **[Choose a compliance standard](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Choose-compliance-standards-from-the-compliance-catalog)** — Select the compliance standard(s) to track from the built-in compliance catalog (e.g. CIS, PCI DSS, NIST, SOC 2, ISO 27001).
 - **[Create a compliance assessment](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Use-an-assessment-profile-to-run-compliance-checks-on-your-assets)** — Use an assessment profile (compliance standard(s) + asset scope) to run compliance checks against your assets.
