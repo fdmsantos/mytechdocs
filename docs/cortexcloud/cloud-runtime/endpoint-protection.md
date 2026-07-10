@@ -119,3 +119,9 @@ A special type of exception where you don't define the criteria yourself — ins
 ## Endpoint Groups
 
 If you have the Cloud Identity Engine configured, you can also use Active Directory attributes (user, AD group, computer) to define groups — which is very useful in enterprise Windows environments with Domain Controllers.
+
+## Endpoint Cleanup
+
+Automatically remove stale or disconnected endpoints from the tenant.
+
+**Path**: Configurations → Agent Configurations → Endpoint Administration Cleanup

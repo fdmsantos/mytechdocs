@@ -47,7 +47,7 @@ Tracks which topics from [Cortex Cloud Runtime Security — Key features](https:
 - [ ] Onboard and configure Cortex Cloud
 - [x] Endpoint security
 - [x] Threat management
-- [ ] Web and API Security (WAAS)
+- [x] Web and API Security (WAAS)
 - [ ] Review inventory and explore your cloud environment
 - [ ] Review and prioritize posture issues
 - [ ] Review and report your security posture and progress
