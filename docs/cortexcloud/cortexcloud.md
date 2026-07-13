@@ -11,11 +11,7 @@ Official documentation: [Get started with Cortex Cloud](https://docs-cortex.palo
 
 Tracks which topics from [Cortex Cloud Posture Management — Key features](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Posture-Management-Documentation/Key-features) TOC have already been reviewed.
 
-- [ ] In-product support case creation
-- [ ] Understand your user persona
-- [ ] Fair Usage policy for Cortex Cloud
 - [ ] Understand license plans
-- [ ] Onboard and configure Cortex Cloud
 - [ ] Review inventory and explore your cloud environment
 - [ ] Review and prioritize posture issues
 - [ ] Agentic Assistant chat
@@ -33,18 +29,16 @@ Tracks which topics from [Cortex Cloud Posture Management — Key features](http
 - [x] Cloud Workload Policies and Rules
 - [x] Base Images Rule
 - [X] Serverless function posture security
-- [ ] Data management
-- [ ] Cortex Cloud Data Sources
-- [ ] Marketplace
-- [ ] Cortex CLI
-- [ ] Cortex Cloud XQL
-- [ ] Graph Search
-- [ ] API specification inventory
+- [x] Data management
+- [x] Cortex Cloud Data Sources
+- [X] Marketplace
+- [X] Cortex CLI
+- [x] Cortex Cloud XQL
+- [x] Graph Search
+- [x] API specification inventory
 
 Tracks which topics from [Cortex Cloud Runtime Security — Key features](https://docs-cortex.paloaltonetworks.com/r/Cortex-CLOUD/Cortex-Cloud-Runtime-Security-Documentation/Key-features) TOC have already been reviewed.
 
-- [ ] Get started with Cortex Cloud
-- [ ] Onboard and configure Cortex Cloud
 - [x] Endpoint security
 - [x] Threat management
 - [x] Web and API Security (WAAS)
@@ -81,6 +75,9 @@ Tracks which menus/submenus of the Cortex Cloud application have already been re
 - [x] Cortex Analytics
 - [x] Data Classification
 - [x] Attack Surface
+- [x] Data Broker
+- [x] Data Management
+- [x] Data Collections
 
 ### Modules
 

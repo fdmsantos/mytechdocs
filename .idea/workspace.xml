@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add Network Exposure">
-      <change afterPath="$PROJECT_DIR$/docs/cortexcloud/cloud-runtime/waas.md" afterDir="false" />
+    <list default="true" id="5b2daa80-6e34-4779-a1da-be9373ca314c" name="Changes" comment="Add cortex cloud WaaS">
+      <change afterPath="$PROJECT_DIR$/docs/cortexcloud/cortexcli.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/cortexcloud/datamanagement.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/cortexcloud/cortexcloud.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
@@ -134,7 +135,8 @@
       <workItem from="1783415004238" duration="11000" />
       <workItem from="1783514865920" duration="11579000" />
       <workItem from="1783594606443" duration="4877000" />
-      <workItem from="1783683235033" duration="5313000" />
+      <workItem from="1783683235033" duration="5333000" />
+      <workItem from="1783948864465" duration="2120000" />
     </task>
     <task id="LOCAL-00001" summary="Add prometheus and alertmanager">
       <option name="closed" value="true" />
@@ -328,7 +330,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783118081802</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Add cortex cloud WaaS">
+      <option name="closed" value="true" />
+      <created>1783695876567</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1783695876567</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,6 +367,7 @@
     <MESSAGE value="Add ASM" />
     <MESSAGE value="Add KSPM" />
     <MESSAGE value="Add Network Exposure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Network Exposure" />
+    <MESSAGE value="Add cortex cloud WaaS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add cortex cloud WaaS" />
   </component>
 </project>

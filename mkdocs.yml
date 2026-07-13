@@ -112,6 +112,8 @@ nav:
           - DNS: unix/networking/dns.md
   - Cortex Cloud:
       - Overview: cortexcloud/cortexcloud.md
+      - Data Management: cortexcloud/datamanagement.md
+      - Cortex CLI: cortexcloud/cortexcli.md
       - Cloud Posture Security:
           - Cloud Security Posture Management: cortexcloud/cloud-posture/cspm.md
           - Application Security Posture Management: cortexcloud/cloud-posture/aspm.md
