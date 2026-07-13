@@ -129,9 +129,6 @@ nav:
           - Threat Management: cortexcloud/cloud-runtime/threat-management.md
           - Serverless Function Runtime Security: cortexcloud/cloud-runtime/serverless-runtime.md
           - Web Application & API Security (WAAS): cortexcloud/cloud-runtime/waas.md
-          - Cloud Detection and Response (CDR) (Deprecated): cortexcloud/cloud-runtime/cdr.md
-          - Cloud Workload Protection (CWP) (Deprecated): cortexcloud/cloud-runtime/cwp.md
-          - API Security (Deprecated): cortexcloud/cloud-runtime/api-security.md
       - Onboarding:
           - GCP: cortexcloud/onboarding/gcp.md
           - GitHub: cortexcloud/onboarding/github.md
